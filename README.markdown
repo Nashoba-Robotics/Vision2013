@@ -13,3 +13,9 @@ The Coprocessor
 
 The coprocessor connects to both the cRIO and the Camera, requesting images from the camera, parsing them, and providing the robot with feedback. It gets images from the camera over a TCP connection and hosts a UDP server for the robot to listen on.
 
+Testing a Recognition Algorithm
+===============================
+
+We have a test suite for various target detection algorithms. Given a manifest file containing image file names and target coordinates, the test suite runs the image detection code and ranks the algorithm based on two factors: accuracy and precision (Interested in the difference? See [here](http://en.wikipedia.org/wiki/Accuracy_and_precision)). The ranking algorithm is tolerant of small mistakes, but if you get a single target more than 40px off, you're probably going to get a negative score. I consider "good scores" (having not tested this with my own code) to be positive scores. After that, most image detection becomes unusable.
+
+Run the ranking algorithm with `./algtest.py ExampleManifest algorithmFile.py`
