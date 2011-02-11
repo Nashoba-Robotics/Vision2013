@@ -9,7 +9,7 @@
 #	All Rights Reserved
 #
 
-#import cv
+import cv
 import hashlib
 import imp
 import math
@@ -71,8 +71,7 @@ totalVariance = 0
 for (imageFile, ps) in tests:
 	# Load the image file
 	try:
-#		image = cv.LoadImage( imageFile )
-		image = None
+		image = cv.LoadImage( imageFile )
 	except:
 		print "Unable to load image '%s'" % imageFile
 		continue
