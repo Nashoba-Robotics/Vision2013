@@ -140,8 +140,8 @@ if debug:
 	print "    μ: %.2f" % totalMean
 	print "    σ: %.2f" % math.sqrt( totalVariance )
 
-precision = 101 - 1.25 ** mean
-accuracy  = 101 - 1.25 ** sd
+precision = 101 - 1.25 ** totalMean
+accuracy  = 101 - 1.25 ** math.sqrt( totalVariance )
 
 print "Precision: %d" % precision
 print "Accuracy:  %d" % accuracy
