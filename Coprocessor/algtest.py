@@ -15,6 +15,7 @@ import imp
 import math
 import os.path
 import sys
+import time
 import traceback
 
 def printError( message ):
@@ -58,10 +59,15 @@ with open( codeFile, 'rb' ) as fd:
 		userScript = imp.load_source( hashlib.md5( codeFile ).hexdigest(), codeFile, fd )
 	except ImportError, x:
 		printError( "Unable to load user script file." )
-		raise
+		if debug:
+			raise
+		exit()
+		
 	except:
 		printError( "Unable to parse user script file." )
-		raise
+		if debug:
+			raise
+		exit()
 
 if userScript is None:
 	printError( "Unable to load user script." )
@@ -71,6 +77,7 @@ if userScript is None:
 totalMean = 0
 totalVariance = 0
 testsRun = 0
+meanTime = 0
 
 for (imageFile, ps) in tests:
 	# Load the image file
@@ -83,8 +90,12 @@ for (imageFile, ps) in tests:
 	
 	# Run the user code
 	identified = None
+	startTime = None
+	endTime = None
 	try:
+		startTime = time.time()
 		identified = userScript.identifyTargets( image )
+		endTime = time.time()
 	except:
 		name, ext = os.path.splitext( imageFile )
 		exc_type, exc_value, exc_traceback = sys.exc_info()
@@ -131,6 +142,8 @@ for (imageFile, ps) in tests:
 	if len( matches ) is not 0:
 		sd = math.sqrt( sdtotal / len( matches ) )
 	
+	meanTime += (endTime - startTime)
+	
 	totalMean += mean
 	totalVariance += sd ** 2
 	
@@ -139,6 +152,7 @@ for (imageFile, ps) in tests:
 	if debug:
 		print "    μ: %.2f" % mean
 		print "    σ: %.2f" % sd
+		print " time: %.2f" % (endTime - startTime)
 	
 	testsRun += 1
 
@@ -150,11 +164,15 @@ if debug:
 	print "\n\033[1;34mOverall\033[0m"
 	print "    μ: %.2f" % totalMean
 	print "    σ: %.2f" % math.sqrt( totalVariance )
+	print " time: %.2f" % meanTime
 
 print ""
 
 precision = 101 - 1.25 ** totalMean
 accuracy  = 101 - 1.25 ** math.sqrt( totalVariance )
+time      = 101 - 1.25 ** meanTime
 
 print "\033[1mPrecision\033[0m: %d" % precision
 print "\033[1m Accuracy\033[0m: %d" % accuracy
+print "\033[1m     Time\033[0m: %d" % time
+
