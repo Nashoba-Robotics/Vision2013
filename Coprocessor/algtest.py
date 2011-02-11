@@ -17,9 +17,12 @@ import os.path
 import sys
 import traceback
 
+def printError( message ):
+	print "\033[1;31mError\033[0m -", message
+
 # Check arguments
 if len( sys.argv ) < 3:
-	print "USAGE: " + sys.argv[0] + " key script"
+	print "\033[1mUSAGE\033[0m: " + sys.argv[0] + " key script"
 	exit()
 
 keyFile    = sys.argv[1]
@@ -54,26 +57,28 @@ with open( codeFile, 'rb' ) as fd:
 	try:
 		userScript = imp.load_source( hashlib.md5( codeFile ).hexdigest(), codeFile, fd )
 	except ImportError, x:
-		print "Unable to load file."
+		printError( "Unable to load user script file." )
 		raise
 	except:
-		print "Unable to parse file."
+		printError( "Unable to parse user script file." )
 		raise
 
 if userScript is None:
-	print "Unable to load user script."
+	printError( "Unable to load user script." )
 	exit()
 
 # Battle-test the user script
 totalMean = 0
 totalVariance = 0
+testsRun = 0
 
 for (imageFile, ps) in tests:
 	# Load the image file
 	try:
 		image = cv.LoadImage( imageFile )
 	except:
-		print "Unable to load image '%s'" % imageFile
+		name, ext = os.path.splitext( imageFile )
+		print "\033[1;31m" + name + "\033[0m - Unable to load file"
 		continue
 	
 	# Run the user code
@@ -81,8 +86,10 @@ for (imageFile, ps) in tests:
 	try:
 		identified = userScript.identifyTargets( image )
 	except:
-		print "Error in user script"
-		raise
+		name, ext = os.path.splitext( imageFile )
+		exc_type, exc_value, exc_traceback = sys.exc_info()
+		print "\033[1;31m" + name + "\033[0m - [\033[1m%s:%d\033[0m] '\033[3m%s\033[0m'" % (codeFile, exc_traceback.tb_lineno, exc_value)
+		continue
 	
 	# Determine which targets are closest to those on the image
 	matches = []
@@ -127,21 +134,27 @@ for (imageFile, ps) in tests:
 	totalMean += mean
 	totalVariance += sd ** 2
 	
+	name, ext = os.path.splitext( imageFile )
+	print "\033[1;32m" + name + "\033[0m - Run Successful"
 	if debug:
-		print "\n%s" % imageFile
-		buf = '-' * len( imageFile )
-		print buf
 		print "    μ: %.2f" % mean
 		print "    σ: %.2f" % sd
+	
+	testsRun += 1
+
+if testsRun == 0:
+	printError( "No tests were run." )
+	exit()
 
 if debug:
-	print "\nOverall"
-	print "======="
+	print "\n\033[1;34mOverall\033[0m"
 	print "    μ: %.2f" % totalMean
 	print "    σ: %.2f" % math.sqrt( totalVariance )
+
+print ""
 
 precision = 101 - 1.25 ** totalMean
 accuracy  = 101 - 1.25 ** math.sqrt( totalVariance )
 
-print "Precision: %d" % precision
-print "Accuracy:  %d" % accuracy
+print "\033[1mPrecision\033[0m: %d" % precision
+print "\033[1m Accuracy\033[0m: %d" % accuracy
