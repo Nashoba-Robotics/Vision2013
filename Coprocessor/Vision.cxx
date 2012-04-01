@@ -242,91 +242,119 @@ void getTargetsType(vector<TargetData> &targets, vector<int> &targetIndices,
     }
   }
 }
-/*
-int getMinTarget(vector<TargetData> &targets) {
+#ifdef GET_MIN_TARGET
+int getMinTarget(vector<TargetData> &targets)
+{
   int mintarget = 0;
   int centerY = 10000;
-  for (int i=0; i < targets.size(); i++) {
-    if (targets[i].centerY < centerY) {
+  for (int i=0; i < targets.size(); i++)
+  {
+    if (targets[i].centerY < centerY)
+    {
       mintarget = i;
       center = targets[i].centerY;
     }
   }
   return i;
 }
-*/
+#endif
 void getTargetGroup(Mat &image, vector<TargetData> &targets, TargetGroup &targetGroup) {
   vector<int> highTargetIndices;
+
   getTargetsType(targets, highTargetIndices, TARGET_HEIGHT_HIGH);
-  if (highTargetIndices.size()) {
+  if (highTargetIndices.size())
+  {
     targetGroup.high = targets[highTargetIndices[0]];
   }
 
   vector<int> lowTargetIndices;
+
   getTargetsType(targets, lowTargetIndices, TARGET_HEIGHT_LOW);
-  if (lowTargetIndices.size()) {
+  if (lowTargetIndices.size())
+  {
     targetGroup.low = targets[lowTargetIndices[0]];
   }
   
   vector<int> middleTargetIndices;
+
   getTargetsType(targets, middleTargetIndices, TARGET_HEIGHT_MIDDLE);
-  switch (middleTargetIndices.size()) {
+  switch (middleTargetIndices.size())
+  {
     // We have two middle targets
-  case 2:
-    if (targets[middleTargetIndices[0]].centerX < targets[middleTargetIndices[1]].centerX) {
-      targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
-      targetGroup.middleLeft = targets[middleTargetIndices[0]];
-      targets[middleTargetIndices[1]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
-      targetGroup.middleRight = targets[middleTargetIndices[1]];
-    } else {
-      targets[middleTargetIndices[1]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
-      targetGroup.middleLeft = targets[middleTargetIndices[1]];
-      targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
-      targetGroup.middleRight = targets[middleTargetIndices[0]];
-    }
-    break;
+  	  case 2:
+  		  if (targets[middleTargetIndices[0]].centerX < targets[middleTargetIndices[1]].centerX)
+  		  {
+  			  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
+  			  targetGroup.middleLeft = targets[middleTargetIndices[0]];
+  			  targets[middleTargetIndices[1]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
+  			  targetGroup.middleRight = targets[middleTargetIndices[1]];
+  		  }
+  		  else {
+  			  targets[middleTargetIndices[1]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
+  			  targetGroup.middleLeft = targets[middleTargetIndices[1]];
+  			  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
+  			  targetGroup.middleRight = targets[middleTargetIndices[0]];
+  		  }
+  		  break;
     // We only have one middle target
-  case 1:
+  	  case 1:
     // We also have a valid high or low
-    if (targetGroup.high.valid || targetGroup.low.valid) {
-      float centerX;
+  		  if (targetGroup.high.valid || targetGroup.low.valid)
+  		  {
+  			  float centerX;
       // Get the center target x location
-      if (targetGroup.high.valid) {
-	centerX = targetGroup.high.centerX;
-      } else {
-	centerX = targetGroup.low.centerX;
-      }
+  			  if (targetGroup.high.valid)
+  			  {
+  				  centerX = targetGroup.high.centerX;
+  			  }
+  			  else
+  			  {
+  				  centerX = targetGroup.low.centerX;
+  			  }
 
       // Based on the center target location, determine if the middle targets
       // are left or right targets
-      if (targets[middleTargetIndices[0]].centerX < centerX) {
-	targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
-	targetGroup.middleLeft = targets[middleTargetIndices[0]];
-      } else {
-	targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
-	targetGroup.middleRight = targets[middleTargetIndices[0]];
-      }
+  			  if (targets[middleTargetIndices[0]].centerX < centerX)
+  			  {
+  				  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
+  				  targetGroup.middleLeft = targets[middleTargetIndices[0]];
+  			  }
+  			  else
+  			  {
+  				  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
+  				  targetGroup.middleRight = targets[middleTargetIndices[0]];
+  			  }
 
       // If we don't have any center targets, assume that they are they are out of the
       // image.  (i.e. don't assume that they are hidden)
-    } else {
-      if (targets[middleTargetIndices[0]].centerX > image.cols/2.0) {
-	targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
-	targetGroup.middleLeft = targets[middleTargetIndices[0]];
-      } else {
-	targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
-	targetGroup.middleRight = targets[middleTargetIndices[0]];
-      }
-    }
-    break;
+  		  }
+  		  else
+  		  {
+  			  if (targets[middleTargetIndices[0]].centerX > image.cols/2.0)
+  			  {
+  				  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
+  				  targetGroup.middleLeft = targets[middleTargetIndices[0]];
+  			  }
+  			  else
+  			  {
+  				  targets[middleTargetIndices[0]].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
+  				  targetGroup.middleRight = targets[middleTargetIndices[0]];
+  			  }
+  	}
+  		  break;
   }
 
   // Now determine the location of the center target, given other target data
-  if (targetGroup.high.valid) {
+  if (targetGroup.high.valid)
+  {
     targetGroup.selected = targetGroup.high;
-  } else if (targetGroup.low.valid) {
+  }
+  else if (targetGroup.low.valid)
+  {
     targetGroup.selected = targetGroup.low;
-  } else if (targetGroup.middleLeft.valid && targetGroup.middleRight.valid) {
+  }
+  else if (targetGroup.middleLeft.valid && targetGroup.middleRight.valid)
+  {
     targetGroup.selected.centerX = (targetGroup.middleLeft.centerX + targetGroup.middleRight.centerX)/2;
     targetGroup.selected.centerY = (targetGroup.middleLeft.centerY + targetGroup.middleRight.centerY)/2;
     targetGroup.selected.sizeX = (targetGroup.middleLeft.sizeX + targetGroup.middleRight.sizeX)/2;
@@ -336,41 +364,58 @@ void getTargetGroup(Mat &image, vector<TargetData> &targets, TargetGroup &target
     targetGroup.selected.angleX = (targetGroup.middleLeft.angleX + targetGroup.middleRight.angleX)/2;
     targetGroup.selected.targetType = TARGET_HEIGHT_MIDDLE_COMBINED;
     targetGroup.selected.valid = true;
-  } else if (targetGroup.middleLeft.valid) {
+  }
+  else if (targetGroup.middleLeft.valid)
+  {
     targetGroup.selected = targetGroup.middleLeft;
-  } else if (targetGroup.middleRight.valid) {
+  }
+  else if (targetGroup.middleRight.valid)
+  {
     targetGroup.selected = targetGroup.middleRight;
   }
 }
 
-bool getBestTarget(vector<TargetData> &targets, TargetData &target) {
-  for (int i=0; i < targets.size(); i++) {
-    if (targets[i].targetType == TARGET_HEIGHT_HIGH) {
+bool getBestTarget(vector<TargetData> &targets, TargetData &target)
+{
+  for (int i=0; i < targets.size(); i++)
+  {
+    if (targets[i].targetType == TARGET_HEIGHT_HIGH)
+    {
       target = targets[i];
       return true;
     }
   }
-  for (int i=0; i < targets.size(); i++) {
-    if (targets[i].targetType == TARGET_HEIGHT_LOW) {
+  for (int i=0; i < targets.size(); i++)
+  {
+    if (targets[i].targetType == TARGET_HEIGHT_LOW)
+    {
       target = targets[i];
       return true;
     }
   }
   vector <TargetData>middleTargets;
-  for (int i=0; i < targets.size(); i++) {
-    if (targets[i].targetType == TARGET_HEIGHT_MIDDLE) {
+
+  for (int i=0; i < targets.size(); i++)
+  {
+    if (targets[i].targetType == TARGET_HEIGHT_MIDDLE)
+    {
       middleTargets.push_back(targets[i]);
     }
   }
-  switch (middleTargets.size()) {
+  switch (middleTargets.size())
+  {
   case 2:
-    if (targets[0].centerX < targets[1].centerX) {
+    if (targets[0].centerX < targets[1].centerX)
+    {
       targets[0].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
       targets[1].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
-    } else {
+    }
+    else
+    {
       targets[1].targetType = TARGET_HEIGHT_MIDDLE_LEFT;
       targets[0].targetType = TARGET_HEIGHT_MIDDLE_RIGHT;
     }
+
     target.centerX = (targets[0].centerX + targets[1].centerX)/2;
     target.centerY = (targets[0].centerY + targets[1].centerY)/2;
     target.sizeX = (targets[0].sizeX + targets[1].sizeX)/2;
@@ -390,7 +435,8 @@ bool getBestTarget(vector<TargetData> &targets, TargetData &target) {
 
 // For each of target compute size, distance, angle
 void getTargetData(Mat &image, const vector<vector<Point> > &targetQuads, vector<TargetData> &targets) {
-  for (int i=0; i < targetQuads.size(); i++) {
+  for (int i=0; i < targetQuads.size(); i++)
+  {
     TargetData target;
     target.points = targetQuads[i];
     target.valid = true;
