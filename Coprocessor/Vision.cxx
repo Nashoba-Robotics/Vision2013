@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ctime>
 
 #include <unistd.h>
 #include <stdio.h>
@@ -54,7 +55,8 @@ int target_height_inches = 16;     // Height of a physical target in inches
 void processImageCallback(int, void* );
 
 // This function is used to calculate and display histogram of an image
-void calcHistogram(Mat &src) {
+void calcHistogram(Mat &src) 
+{
 /// Separate the image in 3 places ( R, G and B )
  vector<Mat> rgb_planes;
  split( src, rgb_planes );
@@ -106,7 +108,8 @@ void calcHistogram(Mat &src) {
 }
 
 
-void createGuiWindows() {
+void createGuiWindows() 
+{
   /// Create Window
 #ifdef GUIALL
   namedWindow( "Source", CV_WINDOW_AUTOSIZE );
@@ -131,18 +134,22 @@ void createGuiWindows() {
 // Determine if a polygon contains another polygon
 // These are targets (Outer rectangle is the outer part of the reflective tape
 // inner rectangle is the inner part of the reflective tape).
-bool rectContainsRect(int i, const vector<vector<Point> > &prunedPoly) {
-  for (int j =0; j < prunedPoly.size(); j++) {
+bool rectContainsRect(int i, const vector<vector<Point> > &prunedPoly) 
+{
+  for (int j =0; j < prunedPoly.size(); j++) 
+    {
     // Don't check against yourself
     if (i == j) continue;
-    if (pointPolygonTest(prunedPoly[i], prunedPoly[j][0], false) > 0) {
+    if (pointPolygonTest(prunedPoly[i], prunedPoly[j][0], false) > 0) 
+      {
       return true;
+      }
     }
-  }
   return false;
 }
 
-typedef enum {
+typedef enum 
+{
   TARGET_HEIGHT_UNKNOWN = 0,
   TARGET_HEIGHT_HIGH,
   TARGET_HEIGHT_MIDDLE,
@@ -150,10 +157,13 @@ typedef enum {
   TARGET_HEIGHT_MIDDLE_LEFT,
   TARGET_HEIGHT_LOW,
   TARGET_HEIGHT_MIDDLE_COMBINED
-} TargetType;
+} 
+TargetType;
 
-const char *getTargetTypeString(TargetType targetType) {
-  switch (targetType) {
+const char *getTargetTypeString(TargetType targetType) 
+{
+  switch (targetType) 
+  {
   case TARGET_HEIGHT_HIGH: return "High";
   case TARGET_HEIGHT_MIDDLE: return "Middle";
   case TARGET_HEIGHT_MIDDLE_RIGHT: return "MiddleRight";
@@ -704,7 +714,7 @@ int main( int argc, char** argv ) {
   time(&start);           // start the clock
 
 #ifdef PROCESS_CAM
-  VideoCapture cap("http://10.17.68.90/axis-cgi/mjpg/video.cgi?resolution=320x240&req_fps=30&.mjpg");
+  VideoCapture cap("http://10.17.68.9/axis-cgi/mjpg/video.cgi?resolution=320x240&req_fps=30&.mjpg");
   //  VideoCapture cap(0); // open the default camera
   if(!cap.isOpened()) { // check if we succeeded
     printf("ERROR: unable to open camera\n");
