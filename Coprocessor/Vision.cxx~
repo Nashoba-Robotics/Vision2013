@@ -4,7 +4,10 @@
 #include <sstream>
 #include <stdio.h>
 #include <stdlib.h>
+<<<<<<< HEAD:Coprocessor/Vision.cxx
 #include <time.h>
+=======
+>>>>>>> coprocessor:Coprocessor/Vision.cxx~
 #include <ctime>
 
 #include <unistd.h>
