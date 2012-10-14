@@ -68,6 +68,7 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 
+#include <string>
 #include <cstdio>
 #include <getopt.h>
 
@@ -77,15 +78,12 @@
 #define CRIO_NETWORK               // Normal case
 //#define WPI_IMAGES               // For debugging with WPI images
 
-using namespace cv;
-using namespace std;
-
 // Image Color Plane definitions
 int BLUE_PLANE  = 0;
 int GREEN_PLANE = 1;
 int RED_PLANE   = 2;
 
-Mat src;                            // The source image matrix
+cv::Mat src;                            // The source image matrix
 
 bool pause_image = false;
 int thresh = 130;                   // Defines the threshold level to apply to image
@@ -179,7 +177,7 @@ class OptionsProcess
 	
                     case 'f': 
                     {
-	                    string optstring(optarg);
+                        std::string optstring(optarg);
 
                         // Find ".jpg" in the argument string
 	                    int jpeg =  optstring.find(".jpg");

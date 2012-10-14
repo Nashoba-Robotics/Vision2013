@@ -12,6 +12,9 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+using namespace cv;
+using namespace std;
+
 // A timer using the timespec struct
 timespec diff(timespec start, timespec end)
 {
