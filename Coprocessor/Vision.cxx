@@ -1,5 +1,17 @@
 #include "./Vision.h"
 
+#include <iostream>
+#include <sstream>
+#include <cstdlib>
+#include <ctime>
+#include <cerrno>
+#include <cstring>
+
+#include <sys/socket.h>
+#include <resolv.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+
 // A timer using the timespec struct
 timespec diff(timespec start, timespec end)
 {

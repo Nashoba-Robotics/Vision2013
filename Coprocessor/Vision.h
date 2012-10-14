@@ -67,20 +67,9 @@
 
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
-#include <iostream>
-#include <sstream>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <getopt.h>
 
-#include <unistd.h>
-#include <stdio.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <resolv.h>
-#include <arpa/inet.h>
+#include <cstdio>
+#include <getopt.h>
 
 #define DEBUG_TEXT              1
 #define BUFFERSIZE              1024
