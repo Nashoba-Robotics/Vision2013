@@ -699,7 +699,7 @@ int sendMessage(float distance, float angle, float tension)
     } 
   
     crio_addr.sin_family = AF_INET;
-    crio_addr.sin_port = htons(9999);
+    crio_addr.sin_port = htons(500);
     
     // Store 10.17.68.2 in crio_addr
     if ( inet_aton("10.17.68.2", &crio_addr.sin_addr) == 0 ) 
@@ -713,6 +713,9 @@ int sendMessage(float distance, float angle, float tension)
      */ 
     sprintf(sendbuffer, "Distance=%f:Angle=%f:Tension=%f", distance, angle, tension);
     sendto( _socket, sendbuffer, strlen(sendbuffer) + 1, 0, (struct sockaddr*) &crio_addr, sizeof(crio_addr) );
+        printf("dist=%f angle=%f type=%f\n", distance,
+	        angle,
+	        tension);
     
     // Close the socket
     close(_socket);
@@ -729,8 +732,8 @@ void processImageCallback(int, void* )
     split(src, planes);
   
     // Keep the color that we are intested in and substract off the other planes
-    addWeighted(planes[GREEN_PLANE], 1, planes[RED_PLANE], -.1, 0, src_color);
-    addWeighted(src_color, 1, planes[BLUE_PLANE], -.4, 0, src_color);
+    addWeighted(planes[GREEN_PLANE], 1, planes[BLUE_PLANE], -.2, 0, src_color);
+    addWeighted(src_color, 1, planes[RED_PLANE], -.2, 0, src_color);
   
     // Dilation + Erosion = Close
     int dilation_type;
@@ -979,20 +982,21 @@ void processImageCallback(int, void* )
         Scalar color = Scalar( 255, 0, 255 );
         circle( finalDrawing, center, 20, color );
         
-        printf("dist=%f angle=%f type=%s\n", targetGroup.selected.distanceY,
+	/*        printf("dist=%f angle=%f type=%s\n", targetGroup.selected.distanceY,
             targetGroup.selected.angleX,
 	        getTargetTypeString(targetGroup.selected.targetType));
-#ifdef CRIO_NETWORK
+	*/
+//#ifdef CRIO_NETWORK
         TargetData target;
         
-        printf("dist=%f angle=%f type=%s\n", targetGroup.selected.distanceY,
-	        targetGroup.selected.angleX,
-	        getTargetTypeString(targetGroup.selected.targetType));
+	//        printf("dist=%f angle=%f type=%s\n", targetGroup.selected.distanceY,
+	//	        targetGroup.selected.angleX,
+	//	        getTargetTypeString(targetGroup.selected.targetType));
 
         float tension = convertDistanceToTension(targetGroup.selected.distanceY);
     
         sendMessage(targetGroup.selected.distanceY, targetGroup.selected.angleX, tension);
-#endif
+#//endif
     }
   
     imshow( "Final", finalDrawing );

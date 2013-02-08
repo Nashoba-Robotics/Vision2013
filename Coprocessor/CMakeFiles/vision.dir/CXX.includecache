@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/git/Coprocessor-Vision/Coprocessor/src/Messaging.cxx
+stdio.h
+-
+stdlib.h
+-
+errno.h
+-
+string.h
+-
+unistd.h
+-
+sys/socket.h
+-
+resolv.h
+-
+arpa/inet.h
+-
+Messaging.h
+/root/git/Coprocessor-Vision/Coprocessor/src/Messaging.h
+
+/root/git/Coprocessor-Vision/Coprocessor/src/Messaging.h
+
