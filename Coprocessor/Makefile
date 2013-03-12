@@ -42,10 +42,10 @@ EQUALS = =
 CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/git/Coprocessor-Vision/Coprocessor/src
+CMAKE_SOURCE_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/git/Coprocessor-Vision/Coprocessor
+CMAKE_BINARY_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -72,9 +72,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/git/Coprocessor-Vision/Coprocessor/CMakeFiles /root/git/Coprocessor-Vision/Coprocessor/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/git/Coprocessor-Vision/Coprocessor/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -114,29 +114,53 @@ vision/fast:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/build
 .PHONY : vision/fast
 
-Arguments.o: Arguments.cxx.o
-.PHONY : Arguments.o
+ImageBufferManager.o: ImageBufferManager.cxx.o
+.PHONY : ImageBufferManager.o
 
 # target to build an object file
-Arguments.cxx.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Arguments.cxx.o
-.PHONY : Arguments.cxx.o
+ImageBufferManager.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageBufferManager.cxx.o
+.PHONY : ImageBufferManager.cxx.o
 
-Arguments.i: Arguments.cxx.i
-.PHONY : Arguments.i
+ImageBufferManager.i: ImageBufferManager.cxx.i
+.PHONY : ImageBufferManager.i
 
 # target to preprocess a source file
-Arguments.cxx.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Arguments.cxx.i
-.PHONY : Arguments.cxx.i
+ImageBufferManager.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageBufferManager.cxx.i
+.PHONY : ImageBufferManager.cxx.i
 
-Arguments.s: Arguments.cxx.s
-.PHONY : Arguments.s
+ImageBufferManager.s: ImageBufferManager.cxx.s
+.PHONY : ImageBufferManager.s
 
 # target to generate assembly for a file
-Arguments.cxx.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Arguments.cxx.s
-.PHONY : Arguments.cxx.s
+ImageBufferManager.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageBufferManager.cxx.s
+.PHONY : ImageBufferManager.cxx.s
+
+ImageCapture.o: ImageCapture.cxx.o
+.PHONY : ImageCapture.o
+
+# target to build an object file
+ImageCapture.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageCapture.cxx.o
+.PHONY : ImageCapture.cxx.o
+
+ImageCapture.i: ImageCapture.cxx.i
+.PHONY : ImageCapture.i
+
+# target to preprocess a source file
+ImageCapture.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageCapture.cxx.i
+.PHONY : ImageCapture.cxx.i
+
+ImageCapture.s: ImageCapture.cxx.s
+.PHONY : ImageCapture.s
+
+# target to generate assembly for a file
+ImageCapture.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageCapture.cxx.s
+.PHONY : ImageCapture.cxx.s
 
 ImageUtils.o: ImageUtils.cxx.o
 .PHONY : ImageUtils.o
@@ -162,6 +186,54 @@ ImageUtils.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ImageUtils.cxx.s
 .PHONY : ImageUtils.cxx.s
 
+Main.o: Main.cxx.o
+.PHONY : Main.o
+
+# target to build an object file
+Main.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Main.cxx.o
+.PHONY : Main.cxx.o
+
+Main.i: Main.cxx.i
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Main.cxx.i
+.PHONY : Main.cxx.i
+
+Main.s: Main.cxx.s
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Main.cxx.s
+.PHONY : Main.cxx.s
+
+MainWindow.o: MainWindow.cxx.o
+.PHONY : MainWindow.o
+
+# target to build an object file
+MainWindow.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/MainWindow.cxx.o
+.PHONY : MainWindow.cxx.o
+
+MainWindow.i: MainWindow.cxx.i
+.PHONY : MainWindow.i
+
+# target to preprocess a source file
+MainWindow.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/MainWindow.cxx.i
+.PHONY : MainWindow.cxx.i
+
+MainWindow.s: MainWindow.cxx.s
+.PHONY : MainWindow.s
+
+# target to generate assembly for a file
+MainWindow.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/MainWindow.cxx.s
+.PHONY : MainWindow.cxx.s
+
 Messaging.o: Messaging.cxx.o
 .PHONY : Messaging.o
 
@@ -185,6 +257,198 @@ Messaging.s: Messaging.cxx.s
 Messaging.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Messaging.cxx.s
 .PHONY : Messaging.cxx.s
+
+Mutex.o: Mutex.cxx.o
+.PHONY : Mutex.o
+
+# target to build an object file
+Mutex.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Mutex.cxx.o
+.PHONY : Mutex.cxx.o
+
+Mutex.i: Mutex.cxx.i
+.PHONY : Mutex.i
+
+# target to preprocess a source file
+Mutex.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Mutex.cxx.i
+.PHONY : Mutex.cxx.i
+
+Mutex.s: Mutex.cxx.s
+.PHONY : Mutex.s
+
+# target to generate assembly for a file
+Mutex.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Mutex.cxx.s
+.PHONY : Mutex.cxx.s
+
+OptionsProcess.o: OptionsProcess.cxx.o
+.PHONY : OptionsProcess.o
+
+# target to build an object file
+OptionsProcess.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/OptionsProcess.cxx.o
+.PHONY : OptionsProcess.cxx.o
+
+OptionsProcess.i: OptionsProcess.cxx.i
+.PHONY : OptionsProcess.i
+
+# target to preprocess a source file
+OptionsProcess.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/OptionsProcess.cxx.i
+.PHONY : OptionsProcess.cxx.i
+
+OptionsProcess.s: OptionsProcess.cxx.s
+.PHONY : OptionsProcess.s
+
+# target to generate assembly for a file
+OptionsProcess.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/OptionsProcess.cxx.s
+.PHONY : OptionsProcess.cxx.s
+
+PoleTarget.o: PoleTarget.cxx.o
+.PHONY : PoleTarget.o
+
+# target to build an object file
+PoleTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTarget.cxx.o
+.PHONY : PoleTarget.cxx.o
+
+PoleTarget.i: PoleTarget.cxx.i
+.PHONY : PoleTarget.i
+
+# target to preprocess a source file
+PoleTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTarget.cxx.i
+.PHONY : PoleTarget.cxx.i
+
+PoleTarget.s: PoleTarget.cxx.s
+.PHONY : PoleTarget.s
+
+# target to generate assembly for a file
+PoleTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTarget.cxx.s
+.PHONY : PoleTarget.cxx.s
+
+PoleTargetMeasured.o: PoleTargetMeasured.cxx.o
+.PHONY : PoleTargetMeasured.o
+
+# target to build an object file
+PoleTargetMeasured.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o
+.PHONY : PoleTargetMeasured.cxx.o
+
+PoleTargetMeasured.i: PoleTargetMeasured.cxx.i
+.PHONY : PoleTargetMeasured.i
+
+# target to preprocess a source file
+PoleTargetMeasured.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTargetMeasured.cxx.i
+.PHONY : PoleTargetMeasured.cxx.i
+
+PoleTargetMeasured.s: PoleTargetMeasured.cxx.s
+.PHONY : PoleTargetMeasured.s
+
+# target to generate assembly for a file
+PoleTargetMeasured.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/PoleTargetMeasured.cxx.s
+.PHONY : PoleTargetMeasured.cxx.s
+
+Process.o: Process.cxx.o
+.PHONY : Process.o
+
+# target to build an object file
+Process.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Process.cxx.o
+.PHONY : Process.cxx.o
+
+Process.i: Process.cxx.i
+.PHONY : Process.i
+
+# target to preprocess a source file
+Process.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Process.cxx.i
+.PHONY : Process.cxx.i
+
+Process.s: Process.cxx.s
+.PHONY : Process.s
+
+# target to generate assembly for a file
+Process.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Process.cxx.s
+.PHONY : Process.cxx.s
+
+ProcessNoTarget.o: ProcessNoTarget.cxx.o
+.PHONY : ProcessNoTarget.o
+
+# target to build an object file
+ProcessNoTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessNoTarget.cxx.o
+.PHONY : ProcessNoTarget.cxx.o
+
+ProcessNoTarget.i: ProcessNoTarget.cxx.i
+.PHONY : ProcessNoTarget.i
+
+# target to preprocess a source file
+ProcessNoTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessNoTarget.cxx.i
+.PHONY : ProcessNoTarget.cxx.i
+
+ProcessNoTarget.s: ProcessNoTarget.cxx.s
+.PHONY : ProcessNoTarget.s
+
+# target to generate assembly for a file
+ProcessNoTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessNoTarget.cxx.s
+.PHONY : ProcessNoTarget.cxx.s
+
+ProcessPoleTarget.o: ProcessPoleTarget.cxx.o
+.PHONY : ProcessPoleTarget.o
+
+# target to build an object file
+ProcessPoleTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o
+.PHONY : ProcessPoleTarget.cxx.o
+
+ProcessPoleTarget.i: ProcessPoleTarget.cxx.i
+.PHONY : ProcessPoleTarget.i
+
+# target to preprocess a source file
+ProcessPoleTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessPoleTarget.cxx.i
+.PHONY : ProcessPoleTarget.cxx.i
+
+ProcessPoleTarget.s: ProcessPoleTarget.cxx.s
+.PHONY : ProcessPoleTarget.s
+
+# target to generate assembly for a file
+ProcessPoleTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessPoleTarget.cxx.s
+.PHONY : ProcessPoleTarget.cxx.s
+
+ProcessRectTarget.o: ProcessRectTarget.cxx.o
+.PHONY : ProcessRectTarget.o
+
+# target to build an object file
+ProcessRectTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessRectTarget.cxx.o
+.PHONY : ProcessRectTarget.cxx.o
+
+ProcessRectTarget.i: ProcessRectTarget.cxx.i
+.PHONY : ProcessRectTarget.i
+
+# target to preprocess a source file
+ProcessRectTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessRectTarget.cxx.i
+.PHONY : ProcessRectTarget.cxx.i
+
+ProcessRectTarget.s: ProcessRectTarget.cxx.s
+.PHONY : ProcessRectTarget.s
+
+# target to generate assembly for a file
+ProcessRectTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessRectTarget.cxx.s
+.PHONY : ProcessRectTarget.cxx.s
 
 RectTarget.o: RectTarget.cxx.o
 .PHONY : RectTarget.o
@@ -234,6 +498,30 @@ RectTargetMeasured.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/RectTargetMeasured.cxx.s
 .PHONY : RectTargetMeasured.cxx.s
 
+Semaphore.o: Semaphore.cxx.o
+.PHONY : Semaphore.o
+
+# target to build an object file
+Semaphore.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Semaphore.cxx.o
+.PHONY : Semaphore.cxx.o
+
+Semaphore.i: Semaphore.cxx.i
+.PHONY : Semaphore.i
+
+# target to preprocess a source file
+Semaphore.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Semaphore.cxx.i
+.PHONY : Semaphore.cxx.i
+
+Semaphore.s: Semaphore.cxx.s
+.PHONY : Semaphore.s
+
+# target to generate assembly for a file
+Semaphore.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/Semaphore.cxx.s
+.PHONY : Semaphore.cxx.s
+
 TimeUtils.o: TimeUtils.cxx.o
 .PHONY : TimeUtils.o
 
@@ -258,29 +546,461 @@ TimeUtils.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/TimeUtils.cxx.s
 .PHONY : TimeUtils.cxx.s
 
-VisionNew2.o: VisionNew2.cxx.o
-.PHONY : VisionNew2.o
+moc_Defines.o: moc_Defines.cxx.o
+.PHONY : moc_Defines.o
 
 # target to build an object file
-VisionNew2.cxx.o:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/VisionNew2.cxx.o
-.PHONY : VisionNew2.cxx.o
+moc_Defines.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Defines.cxx.o
+.PHONY : moc_Defines.cxx.o
 
-VisionNew2.i: VisionNew2.cxx.i
-.PHONY : VisionNew2.i
+moc_Defines.i: moc_Defines.cxx.i
+.PHONY : moc_Defines.i
 
 # target to preprocess a source file
-VisionNew2.cxx.i:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/VisionNew2.cxx.i
-.PHONY : VisionNew2.cxx.i
+moc_Defines.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Defines.cxx.i
+.PHONY : moc_Defines.cxx.i
 
-VisionNew2.s: VisionNew2.cxx.s
-.PHONY : VisionNew2.s
+moc_Defines.s: moc_Defines.cxx.s
+.PHONY : moc_Defines.s
 
 # target to generate assembly for a file
-VisionNew2.cxx.s:
-	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/VisionNew2.cxx.s
-.PHONY : VisionNew2.cxx.s
+moc_Defines.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Defines.cxx.s
+.PHONY : moc_Defines.cxx.s
+
+moc_ImageBufferManager.o: moc_ImageBufferManager.cxx.o
+.PHONY : moc_ImageBufferManager.o
+
+# target to build an object file
+moc_ImageBufferManager.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o
+.PHONY : moc_ImageBufferManager.cxx.o
+
+moc_ImageBufferManager.i: moc_ImageBufferManager.cxx.i
+.PHONY : moc_ImageBufferManager.i
+
+# target to preprocess a source file
+moc_ImageBufferManager.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.i
+.PHONY : moc_ImageBufferManager.cxx.i
+
+moc_ImageBufferManager.s: moc_ImageBufferManager.cxx.s
+.PHONY : moc_ImageBufferManager.s
+
+# target to generate assembly for a file
+moc_ImageBufferManager.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.s
+.PHONY : moc_ImageBufferManager.cxx.s
+
+moc_ImageCapture.o: moc_ImageCapture.cxx.o
+.PHONY : moc_ImageCapture.o
+
+# target to build an object file
+moc_ImageCapture.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageCapture.cxx.o
+.PHONY : moc_ImageCapture.cxx.o
+
+moc_ImageCapture.i: moc_ImageCapture.cxx.i
+.PHONY : moc_ImageCapture.i
+
+# target to preprocess a source file
+moc_ImageCapture.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageCapture.cxx.i
+.PHONY : moc_ImageCapture.cxx.i
+
+moc_ImageCapture.s: moc_ImageCapture.cxx.s
+.PHONY : moc_ImageCapture.s
+
+# target to generate assembly for a file
+moc_ImageCapture.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageCapture.cxx.s
+.PHONY : moc_ImageCapture.cxx.s
+
+moc_ImageUtils.o: moc_ImageUtils.cxx.o
+.PHONY : moc_ImageUtils.o
+
+# target to build an object file
+moc_ImageUtils.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageUtils.cxx.o
+.PHONY : moc_ImageUtils.cxx.o
+
+moc_ImageUtils.i: moc_ImageUtils.cxx.i
+.PHONY : moc_ImageUtils.i
+
+# target to preprocess a source file
+moc_ImageUtils.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageUtils.cxx.i
+.PHONY : moc_ImageUtils.cxx.i
+
+moc_ImageUtils.s: moc_ImageUtils.cxx.s
+.PHONY : moc_ImageUtils.s
+
+# target to generate assembly for a file
+moc_ImageUtils.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ImageUtils.cxx.s
+.PHONY : moc_ImageUtils.cxx.s
+
+moc_MainWindow.o: moc_MainWindow.cxx.o
+.PHONY : moc_MainWindow.o
+
+# target to build an object file
+moc_MainWindow.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_MainWindow.cxx.o
+.PHONY : moc_MainWindow.cxx.o
+
+moc_MainWindow.i: moc_MainWindow.cxx.i
+.PHONY : moc_MainWindow.i
+
+# target to preprocess a source file
+moc_MainWindow.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_MainWindow.cxx.i
+.PHONY : moc_MainWindow.cxx.i
+
+moc_MainWindow.s: moc_MainWindow.cxx.s
+.PHONY : moc_MainWindow.s
+
+# target to generate assembly for a file
+moc_MainWindow.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_MainWindow.cxx.s
+.PHONY : moc_MainWindow.cxx.s
+
+moc_Messaging.o: moc_Messaging.cxx.o
+.PHONY : moc_Messaging.o
+
+# target to build an object file
+moc_Messaging.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Messaging.cxx.o
+.PHONY : moc_Messaging.cxx.o
+
+moc_Messaging.i: moc_Messaging.cxx.i
+.PHONY : moc_Messaging.i
+
+# target to preprocess a source file
+moc_Messaging.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Messaging.cxx.i
+.PHONY : moc_Messaging.cxx.i
+
+moc_Messaging.s: moc_Messaging.cxx.s
+.PHONY : moc_Messaging.s
+
+# target to generate assembly for a file
+moc_Messaging.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Messaging.cxx.s
+.PHONY : moc_Messaging.cxx.s
+
+moc_Mutex.o: moc_Mutex.cxx.o
+.PHONY : moc_Mutex.o
+
+# target to build an object file
+moc_Mutex.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Mutex.cxx.o
+.PHONY : moc_Mutex.cxx.o
+
+moc_Mutex.i: moc_Mutex.cxx.i
+.PHONY : moc_Mutex.i
+
+# target to preprocess a source file
+moc_Mutex.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Mutex.cxx.i
+.PHONY : moc_Mutex.cxx.i
+
+moc_Mutex.s: moc_Mutex.cxx.s
+.PHONY : moc_Mutex.s
+
+# target to generate assembly for a file
+moc_Mutex.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Mutex.cxx.s
+.PHONY : moc_Mutex.cxx.s
+
+moc_OptionsProcess.o: moc_OptionsProcess.cxx.o
+.PHONY : moc_OptionsProcess.o
+
+# target to build an object file
+moc_OptionsProcess.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o
+.PHONY : moc_OptionsProcess.cxx.o
+
+moc_OptionsProcess.i: moc_OptionsProcess.cxx.i
+.PHONY : moc_OptionsProcess.i
+
+# target to preprocess a source file
+moc_OptionsProcess.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_OptionsProcess.cxx.i
+.PHONY : moc_OptionsProcess.cxx.i
+
+moc_OptionsProcess.s: moc_OptionsProcess.cxx.s
+.PHONY : moc_OptionsProcess.s
+
+# target to generate assembly for a file
+moc_OptionsProcess.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_OptionsProcess.cxx.s
+.PHONY : moc_OptionsProcess.cxx.s
+
+moc_PoleTarget.o: moc_PoleTarget.cxx.o
+.PHONY : moc_PoleTarget.o
+
+# target to build an object file
+moc_PoleTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTarget.cxx.o
+.PHONY : moc_PoleTarget.cxx.o
+
+moc_PoleTarget.i: moc_PoleTarget.cxx.i
+.PHONY : moc_PoleTarget.i
+
+# target to preprocess a source file
+moc_PoleTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTarget.cxx.i
+.PHONY : moc_PoleTarget.cxx.i
+
+moc_PoleTarget.s: moc_PoleTarget.cxx.s
+.PHONY : moc_PoleTarget.s
+
+# target to generate assembly for a file
+moc_PoleTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTarget.cxx.s
+.PHONY : moc_PoleTarget.cxx.s
+
+moc_PoleTargetMeasured.o: moc_PoleTargetMeasured.cxx.o
+.PHONY : moc_PoleTargetMeasured.o
+
+# target to build an object file
+moc_PoleTargetMeasured.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o
+.PHONY : moc_PoleTargetMeasured.cxx.o
+
+moc_PoleTargetMeasured.i: moc_PoleTargetMeasured.cxx.i
+.PHONY : moc_PoleTargetMeasured.i
+
+# target to preprocess a source file
+moc_PoleTargetMeasured.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.i
+.PHONY : moc_PoleTargetMeasured.cxx.i
+
+moc_PoleTargetMeasured.s: moc_PoleTargetMeasured.cxx.s
+.PHONY : moc_PoleTargetMeasured.s
+
+# target to generate assembly for a file
+moc_PoleTargetMeasured.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.s
+.PHONY : moc_PoleTargetMeasured.cxx.s
+
+moc_Process.o: moc_Process.cxx.o
+.PHONY : moc_Process.o
+
+# target to build an object file
+moc_Process.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Process.cxx.o
+.PHONY : moc_Process.cxx.o
+
+moc_Process.i: moc_Process.cxx.i
+.PHONY : moc_Process.i
+
+# target to preprocess a source file
+moc_Process.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Process.cxx.i
+.PHONY : moc_Process.cxx.i
+
+moc_Process.s: moc_Process.cxx.s
+.PHONY : moc_Process.s
+
+# target to generate assembly for a file
+moc_Process.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Process.cxx.s
+.PHONY : moc_Process.cxx.s
+
+moc_ProcessNoTarget.o: moc_ProcessNoTarget.cxx.o
+.PHONY : moc_ProcessNoTarget.o
+
+# target to build an object file
+moc_ProcessNoTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o
+.PHONY : moc_ProcessNoTarget.cxx.o
+
+moc_ProcessNoTarget.i: moc_ProcessNoTarget.cxx.i
+.PHONY : moc_ProcessNoTarget.i
+
+# target to preprocess a source file
+moc_ProcessNoTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.i
+.PHONY : moc_ProcessNoTarget.cxx.i
+
+moc_ProcessNoTarget.s: moc_ProcessNoTarget.cxx.s
+.PHONY : moc_ProcessNoTarget.s
+
+# target to generate assembly for a file
+moc_ProcessNoTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.s
+.PHONY : moc_ProcessNoTarget.cxx.s
+
+moc_ProcessPoleTarget.o: moc_ProcessPoleTarget.cxx.o
+.PHONY : moc_ProcessPoleTarget.o
+
+# target to build an object file
+moc_ProcessPoleTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o
+.PHONY : moc_ProcessPoleTarget.cxx.o
+
+moc_ProcessPoleTarget.i: moc_ProcessPoleTarget.cxx.i
+.PHONY : moc_ProcessPoleTarget.i
+
+# target to preprocess a source file
+moc_ProcessPoleTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.i
+.PHONY : moc_ProcessPoleTarget.cxx.i
+
+moc_ProcessPoleTarget.s: moc_ProcessPoleTarget.cxx.s
+.PHONY : moc_ProcessPoleTarget.s
+
+# target to generate assembly for a file
+moc_ProcessPoleTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.s
+.PHONY : moc_ProcessPoleTarget.cxx.s
+
+moc_ProcessRectTarget.o: moc_ProcessRectTarget.cxx.o
+.PHONY : moc_ProcessRectTarget.o
+
+# target to build an object file
+moc_ProcessRectTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o
+.PHONY : moc_ProcessRectTarget.cxx.o
+
+moc_ProcessRectTarget.i: moc_ProcessRectTarget.cxx.i
+.PHONY : moc_ProcessRectTarget.i
+
+# target to preprocess a source file
+moc_ProcessRectTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.i
+.PHONY : moc_ProcessRectTarget.cxx.i
+
+moc_ProcessRectTarget.s: moc_ProcessRectTarget.cxx.s
+.PHONY : moc_ProcessRectTarget.s
+
+# target to generate assembly for a file
+moc_ProcessRectTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s
+.PHONY : moc_ProcessRectTarget.cxx.s
+
+moc_RectTarget.o: moc_RectTarget.cxx.o
+.PHONY : moc_RectTarget.o
+
+# target to build an object file
+moc_RectTarget.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTarget.cxx.o
+.PHONY : moc_RectTarget.cxx.o
+
+moc_RectTarget.i: moc_RectTarget.cxx.i
+.PHONY : moc_RectTarget.i
+
+# target to preprocess a source file
+moc_RectTarget.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTarget.cxx.i
+.PHONY : moc_RectTarget.cxx.i
+
+moc_RectTarget.s: moc_RectTarget.cxx.s
+.PHONY : moc_RectTarget.s
+
+# target to generate assembly for a file
+moc_RectTarget.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTarget.cxx.s
+.PHONY : moc_RectTarget.cxx.s
+
+moc_RectTargetMeasured.o: moc_RectTargetMeasured.cxx.o
+.PHONY : moc_RectTargetMeasured.o
+
+# target to build an object file
+moc_RectTargetMeasured.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o
+.PHONY : moc_RectTargetMeasured.cxx.o
+
+moc_RectTargetMeasured.i: moc_RectTargetMeasured.cxx.i
+.PHONY : moc_RectTargetMeasured.i
+
+# target to preprocess a source file
+moc_RectTargetMeasured.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.i
+.PHONY : moc_RectTargetMeasured.cxx.i
+
+moc_RectTargetMeasured.s: moc_RectTargetMeasured.cxx.s
+.PHONY : moc_RectTargetMeasured.s
+
+# target to generate assembly for a file
+moc_RectTargetMeasured.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.s
+.PHONY : moc_RectTargetMeasured.cxx.s
+
+moc_Semaphore.o: moc_Semaphore.cxx.o
+.PHONY : moc_Semaphore.o
+
+# target to build an object file
+moc_Semaphore.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Semaphore.cxx.o
+.PHONY : moc_Semaphore.cxx.o
+
+moc_Semaphore.i: moc_Semaphore.cxx.i
+.PHONY : moc_Semaphore.i
+
+# target to preprocess a source file
+moc_Semaphore.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Semaphore.cxx.i
+.PHONY : moc_Semaphore.cxx.i
+
+moc_Semaphore.s: moc_Semaphore.cxx.s
+.PHONY : moc_Semaphore.s
+
+# target to generate assembly for a file
+moc_Semaphore.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Semaphore.cxx.s
+.PHONY : moc_Semaphore.cxx.s
+
+moc_Thread.o: moc_Thread.cxx.o
+.PHONY : moc_Thread.o
+
+# target to build an object file
+moc_Thread.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Thread.cxx.o
+.PHONY : moc_Thread.cxx.o
+
+moc_Thread.i: moc_Thread.cxx.i
+.PHONY : moc_Thread.i
+
+# target to preprocess a source file
+moc_Thread.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Thread.cxx.i
+.PHONY : moc_Thread.cxx.i
+
+moc_Thread.s: moc_Thread.cxx.s
+.PHONY : moc_Thread.s
+
+# target to generate assembly for a file
+moc_Thread.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_Thread.cxx.s
+.PHONY : moc_Thread.cxx.s
+
+moc_TimeUtils.o: moc_TimeUtils.cxx.o
+.PHONY : moc_TimeUtils.o
+
+# target to build an object file
+moc_TimeUtils.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_TimeUtils.cxx.o
+.PHONY : moc_TimeUtils.cxx.o
+
+moc_TimeUtils.i: moc_TimeUtils.cxx.i
+.PHONY : moc_TimeUtils.i
+
+# target to preprocess a source file
+moc_TimeUtils.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_TimeUtils.cxx.i
+.PHONY : moc_TimeUtils.cxx.i
+
+moc_TimeUtils.s: moc_TimeUtils.cxx.s
+.PHONY : moc_TimeUtils.s
+
+# target to generate assembly for a file
+moc_TimeUtils.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_TimeUtils.cxx.s
+.PHONY : moc_TimeUtils.cxx.s
 
 # Help Target
 help:
@@ -291,27 +1011,117 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... vision"
-	@echo "... Arguments.o"
-	@echo "... Arguments.i"
-	@echo "... Arguments.s"
+	@echo "... ImageBufferManager.o"
+	@echo "... ImageBufferManager.i"
+	@echo "... ImageBufferManager.s"
+	@echo "... ImageCapture.o"
+	@echo "... ImageCapture.i"
+	@echo "... ImageCapture.s"
 	@echo "... ImageUtils.o"
 	@echo "... ImageUtils.i"
 	@echo "... ImageUtils.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
+	@echo "... MainWindow.o"
+	@echo "... MainWindow.i"
+	@echo "... MainWindow.s"
 	@echo "... Messaging.o"
 	@echo "... Messaging.i"
 	@echo "... Messaging.s"
+	@echo "... Mutex.o"
+	@echo "... Mutex.i"
+	@echo "... Mutex.s"
+	@echo "... OptionsProcess.o"
+	@echo "... OptionsProcess.i"
+	@echo "... OptionsProcess.s"
+	@echo "... PoleTarget.o"
+	@echo "... PoleTarget.i"
+	@echo "... PoleTarget.s"
+	@echo "... PoleTargetMeasured.o"
+	@echo "... PoleTargetMeasured.i"
+	@echo "... PoleTargetMeasured.s"
+	@echo "... Process.o"
+	@echo "... Process.i"
+	@echo "... Process.s"
+	@echo "... ProcessNoTarget.o"
+	@echo "... ProcessNoTarget.i"
+	@echo "... ProcessNoTarget.s"
+	@echo "... ProcessPoleTarget.o"
+	@echo "... ProcessPoleTarget.i"
+	@echo "... ProcessPoleTarget.s"
+	@echo "... ProcessRectTarget.o"
+	@echo "... ProcessRectTarget.i"
+	@echo "... ProcessRectTarget.s"
 	@echo "... RectTarget.o"
 	@echo "... RectTarget.i"
 	@echo "... RectTarget.s"
 	@echo "... RectTargetMeasured.o"
 	@echo "... RectTargetMeasured.i"
 	@echo "... RectTargetMeasured.s"
+	@echo "... Semaphore.o"
+	@echo "... Semaphore.i"
+	@echo "... Semaphore.s"
 	@echo "... TimeUtils.o"
 	@echo "... TimeUtils.i"
 	@echo "... TimeUtils.s"
-	@echo "... VisionNew2.o"
-	@echo "... VisionNew2.i"
-	@echo "... VisionNew2.s"
+	@echo "... moc_Defines.o"
+	@echo "... moc_Defines.i"
+	@echo "... moc_Defines.s"
+	@echo "... moc_ImageBufferManager.o"
+	@echo "... moc_ImageBufferManager.i"
+	@echo "... moc_ImageBufferManager.s"
+	@echo "... moc_ImageCapture.o"
+	@echo "... moc_ImageCapture.i"
+	@echo "... moc_ImageCapture.s"
+	@echo "... moc_ImageUtils.o"
+	@echo "... moc_ImageUtils.i"
+	@echo "... moc_ImageUtils.s"
+	@echo "... moc_MainWindow.o"
+	@echo "... moc_MainWindow.i"
+	@echo "... moc_MainWindow.s"
+	@echo "... moc_Messaging.o"
+	@echo "... moc_Messaging.i"
+	@echo "... moc_Messaging.s"
+	@echo "... moc_Mutex.o"
+	@echo "... moc_Mutex.i"
+	@echo "... moc_Mutex.s"
+	@echo "... moc_OptionsProcess.o"
+	@echo "... moc_OptionsProcess.i"
+	@echo "... moc_OptionsProcess.s"
+	@echo "... moc_PoleTarget.o"
+	@echo "... moc_PoleTarget.i"
+	@echo "... moc_PoleTarget.s"
+	@echo "... moc_PoleTargetMeasured.o"
+	@echo "... moc_PoleTargetMeasured.i"
+	@echo "... moc_PoleTargetMeasured.s"
+	@echo "... moc_Process.o"
+	@echo "... moc_Process.i"
+	@echo "... moc_Process.s"
+	@echo "... moc_ProcessNoTarget.o"
+	@echo "... moc_ProcessNoTarget.i"
+	@echo "... moc_ProcessNoTarget.s"
+	@echo "... moc_ProcessPoleTarget.o"
+	@echo "... moc_ProcessPoleTarget.i"
+	@echo "... moc_ProcessPoleTarget.s"
+	@echo "... moc_ProcessRectTarget.o"
+	@echo "... moc_ProcessRectTarget.i"
+	@echo "... moc_ProcessRectTarget.s"
+	@echo "... moc_RectTarget.o"
+	@echo "... moc_RectTarget.i"
+	@echo "... moc_RectTarget.s"
+	@echo "... moc_RectTargetMeasured.o"
+	@echo "... moc_RectTargetMeasured.i"
+	@echo "... moc_RectTargetMeasured.s"
+	@echo "... moc_Semaphore.o"
+	@echo "... moc_Semaphore.i"
+	@echo "... moc_Semaphore.s"
+	@echo "... moc_Thread.o"
+	@echo "... moc_Thread.i"
+	@echo "... moc_Thread.s"
+	@echo "... moc_TimeUtils.o"
+	@echo "... moc_TimeUtils.i"
+	@echo "... moc_TimeUtils.s"
 .PHONY : help
 
 
