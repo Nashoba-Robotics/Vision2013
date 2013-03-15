@@ -34,7 +34,6 @@ CMakeFiles/vision.dir/Main.cxx.o
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Semaphore.h
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Thread.h
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.h
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ui_MainWindow.h
  /usr/include/qt4/Qt3Support/q3cstring.h
  /usr/include/qt4/Qt3Support/q3valuelist.h
  /usr/include/qt4/QtCore/QPoint
@@ -180,6 +179,7 @@ CMakeFiles/vision.dir/Main.cxx.o
  /usr/include/qt4/QtGui/qwindowdefs.h
  /usr/include/qt4/QtGui/qwindowdefs_win.h
  /usr/include/qt4/QtGui/qwmatrix.h
+ ui_MainWindow.h
 CMakeFiles/vision.dir/MainWindow.cxx.o
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageBufferManager.h
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageUtils.h
@@ -188,7 +188,6 @@ CMakeFiles/vision.dir/MainWindow.cxx.o
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Mutex.h
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/OptionsProcess.h
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Semaphore.h
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ui_MainWindow.h
  /usr/include/qt4/Qt3Support/q3cstring.h
  /usr/include/qt4/Qt3Support/q3valuelist.h
  /usr/include/qt4/QtCore/QPoint
@@ -337,6 +336,7 @@ CMakeFiles/vision.dir/MainWindow.cxx.o
  /usr/include/qt4/QtGui/qwindowdefs.h
  /usr/include/qt4/QtGui/qwindowdefs_win.h
  /usr/include/qt4/QtGui/qwmatrix.h
+ ui_MainWindow.h
 CMakeFiles/vision.dir/Messaging.cxx.o
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Messaging.cxx
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Messaging.h
@@ -407,17 +407,16 @@ CMakeFiles/vision.dir/TimeUtils.cxx.o
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.cxx
  /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.h
 CMakeFiles/vision.dir/moc_Defines.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx
 CMakeFiles/vision.dir/moc_MainWindow.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.h
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ui_MainWindow.h
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../MainWindow.h
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx
  /usr/include/qt4/Qt3Support/q3cstring.h
  /usr/include/qt4/Qt3Support/q3valuelist.h
  /usr/include/qt4/QtCore/QPoint
@@ -563,31 +562,32 @@ CMakeFiles/vision.dir/moc_MainWindow.cxx.o
  /usr/include/qt4/QtGui/qwindowdefs.h
  /usr/include/qt4/QtGui/qwindowdefs_win.h
  /usr/include/qt4/QtGui/qwmatrix.h
+ ui_MainWindow.h
 CMakeFiles/vision.dir/moc_Messaging.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx
 CMakeFiles/vision.dir/moc_Mutex.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx
 CMakeFiles/vision.dir/moc_Process.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx
 CMakeFiles/vision.dir/moc_RectTarget.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx
 CMakeFiles/vision.dir/moc_Semaphore.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx
 CMakeFiles/vision.dir/moc_Thread.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.o
- /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx
+ /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx

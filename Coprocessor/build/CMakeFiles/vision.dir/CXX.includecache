@@ -328,71 +328,53 @@ TimeUtils.h
 
 /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.h
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../MainWindow.h
+ui_MainWindow.h
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../ui_MainWindow.h
+opencv2/highgui/highgui.hpp
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../opencv2/highgui/highgui.hpp
+opencv2/imgproc/imgproc.hpp
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../opencv2/imgproc/imgproc.hpp
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx
-MainWindow.h
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.h
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx
+../MainWindow.h
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/../MainWindow.h
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx
 
-/home/fluffypony/git/Coprocessor-Vision/Coprocessor/ui_MainWindow.h
-QtCore/QVariant
--
-QtGui/QAction
--
-QtGui/QApplication
--
-QtGui/QButtonGroup
--
-QtGui/QComboBox
--
-QtGui/QHeaderView
--
-QtGui/QLabel
--
-QtGui/QMainWindow
--
-QtGui/QMenu
--
-QtGui/QMenuBar
--
-QtGui/QStatusBar
--
-QtGui/QWidget
--
+/home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx
 
 /usr/include/qt4/Qt3Support/q3cstring.h
 QtCore/qbytearray.h
@@ -1524,5 +1506,31 @@ QtCore/qglobal.h
 
 /usr/include/qt4/QtGui/qwmatrix.h
 QtGui/qmatrix.h
+-
+
+ui_MainWindow.h
+QtCore/QVariant
+-
+QtGui/QAction
+-
+QtGui/QApplication
+-
+QtGui/QButtonGroup
+-
+QtGui/QComboBox
+-
+QtGui/QHeaderView
+-
+QtGui/QLabel
+-
+QtGui/QMainWindow
+-
+QtGui/QMenu
+-
+QtGui/QMenuBar
+-
+QtGui/QStatusBar
+-
+QtGui/QWidget
 -
 

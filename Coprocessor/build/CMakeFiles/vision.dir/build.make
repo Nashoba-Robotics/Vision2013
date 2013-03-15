@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
+CMAKE_BINARY_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/vision.dir/depend.make
@@ -52,109 +52,109 @@ include CMakeFiles/vision.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/vision.dir/flags.make
 
-moc_Defines.cxx: Defines.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_1)
+moc_Defines.cxx: ../Defines.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Defines.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Defines.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Defines.h
 
-moc_Mutex.cxx: Mutex.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_2)
+moc_Mutex.cxx: ../Mutex.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Mutex.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Mutex.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Mutex.h
 
-moc_ProcessNoTarget.cxx: ProcessNoTarget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_3)
+moc_ProcessNoTarget.cxx: ../ProcessNoTarget.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ProcessNoTarget.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessNoTarget.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessNoTarget.h
 
-moc_Semaphore.cxx: Semaphore.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_4)
+moc_Semaphore.cxx: ../Semaphore.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Semaphore.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Semaphore.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Semaphore.h
 
-moc_ImageBufferManager.cxx: ImageBufferManager.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_5)
+moc_ImageBufferManager.cxx: ../ImageBufferManager.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ImageBufferManager.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageBufferManager.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageBufferManager.h
 
-moc_OptionsProcess.cxx: OptionsProcess.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_6)
+moc_OptionsProcess.cxx: ../OptionsProcess.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_6)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_OptionsProcess.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/OptionsProcess.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/OptionsProcess.h
 
-moc_ProcessPoleTarget.cxx: ProcessPoleTarget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_7)
+moc_ProcessPoleTarget.cxx: ../ProcessPoleTarget.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_7)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ProcessPoleTarget.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessPoleTarget.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessPoleTarget.h
 
-moc_Thread.cxx: Thread.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_8)
+moc_Thread.cxx: ../Thread.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_8)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Thread.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Thread.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Thread.h
 
-moc_ImageCapture.cxx: ImageCapture.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_9)
+moc_ImageCapture.cxx: ../ImageCapture.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_9)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ImageCapture.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageCapture.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageCapture.h
 
-moc_PoleTarget.cxx: PoleTarget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_10)
+moc_PoleTarget.cxx: ../PoleTarget.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_10)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_PoleTarget.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTarget.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTarget.h
 
-moc_ProcessRectTarget.cxx: ProcessRectTarget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_11)
+moc_ProcessRectTarget.cxx: ../ProcessRectTarget.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ProcessRectTarget.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessRectTarget.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessRectTarget.h
 
-moc_TimeUtils.cxx: TimeUtils.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_12)
+moc_TimeUtils.cxx: ../TimeUtils.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_TimeUtils.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.h
 
-moc_ImageUtils.cxx: ImageUtils.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_13)
+moc_ImageUtils.cxx: ../ImageUtils.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_ImageUtils.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageUtils.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageUtils.h
 
-moc_PoleTargetMeasured.cxx: PoleTargetMeasured.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_14)
+moc_PoleTargetMeasured.cxx: ../PoleTargetMeasured.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_PoleTargetMeasured.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTargetMeasured.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTargetMeasured.h
 
-moc_RectTarget.cxx: RectTarget.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_15)
+moc_RectTarget.cxx: ../RectTarget.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_RectTarget.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTarget.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTarget.h
 
-moc_Messaging.cxx: Messaging.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_16)
+moc_Messaging.cxx: ../Messaging.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_16)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Messaging.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Messaging.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Messaging.h
 
-moc_Process.cxx: Process.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_17)
+moc_Process.cxx: ../Process.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_17)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_Process.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Process.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Process.h
 
-moc_RectTargetMeasured.cxx: RectTargetMeasured.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_18)
+moc_RectTargetMeasured.cxx: ../RectTargetMeasured.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_18)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_RectTargetMeasured.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTargetMeasured.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTargetMeasured.h
 
-moc_MainWindow.cxx: MainWindow.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_19)
+moc_MainWindow.cxx: ../MainWindow.h
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_19)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_MainWindow.cxx"
-	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.h
+	/usr/lib/qt4/bin/moc -I/usr/include/opencv -I/usr/include -I/usr/include/qt4 -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -DQT_GUI_LIB -DQT_CORE_LIB -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.h
 
-ui_MainWindow.h: MainWindow.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_20)
+ui_MainWindow.h: ../MainWindow.ui
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_20)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_MainWindow.h"
-	/usr/lib/qt4/bin/uic -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ui_MainWindow.h /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.ui
+	/usr/lib/qt4/bin/uic -o /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/ui_MainWindow.h /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.ui
 
 CMakeFiles/vision.dir/OptionsProcess.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/OptionsProcess.cxx.o: OptionsProcess.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_21)
+CMakeFiles/vision.dir/OptionsProcess.cxx.o: ../OptionsProcess.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_21)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/OptionsProcess.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/OptionsProcess.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/OptionsProcess.cxx
 
@@ -176,8 +176,8 @@ CMakeFiles/vision.dir/OptionsProcess.cxx.o.provides: CMakeFiles/vision.dir/Optio
 CMakeFiles/vision.dir/OptionsProcess.cxx.o.provides.build: CMakeFiles/vision.dir/OptionsProcess.cxx.o
 
 CMakeFiles/vision.dir/ImageUtils.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ImageUtils.cxx.o: ImageUtils.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_22)
+CMakeFiles/vision.dir/ImageUtils.cxx.o: ../ImageUtils.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_22)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ImageUtils.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ImageUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageUtils.cxx
 
@@ -199,8 +199,8 @@ CMakeFiles/vision.dir/ImageUtils.cxx.o.provides: CMakeFiles/vision.dir/ImageUtil
 CMakeFiles/vision.dir/ImageUtils.cxx.o.provides.build: CMakeFiles/vision.dir/ImageUtils.cxx.o
 
 CMakeFiles/vision.dir/RectTargetMeasured.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/RectTargetMeasured.cxx.o: RectTargetMeasured.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_23)
+CMakeFiles/vision.dir/RectTargetMeasured.cxx.o: ../RectTargetMeasured.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_23)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/RectTargetMeasured.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/RectTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTargetMeasured.cxx
 
@@ -222,8 +222,8 @@ CMakeFiles/vision.dir/RectTargetMeasured.cxx.o.provides: CMakeFiles/vision.dir/R
 CMakeFiles/vision.dir/RectTargetMeasured.cxx.o.provides.build: CMakeFiles/vision.dir/RectTargetMeasured.cxx.o
 
 CMakeFiles/vision.dir/RectTarget.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/RectTarget.cxx.o: RectTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_24)
+CMakeFiles/vision.dir/RectTarget.cxx.o: ../RectTarget.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_24)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/RectTarget.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/RectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/RectTarget.cxx
 
@@ -245,8 +245,8 @@ CMakeFiles/vision.dir/RectTarget.cxx.o.provides: CMakeFiles/vision.dir/RectTarge
 CMakeFiles/vision.dir/RectTarget.cxx.o.provides.build: CMakeFiles/vision.dir/RectTarget.cxx.o
 
 CMakeFiles/vision.dir/Messaging.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/Messaging.cxx.o: Messaging.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_25)
+CMakeFiles/vision.dir/Messaging.cxx.o: ../Messaging.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_25)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/Messaging.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/Messaging.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Messaging.cxx
 
@@ -268,8 +268,8 @@ CMakeFiles/vision.dir/Messaging.cxx.o.provides: CMakeFiles/vision.dir/Messaging.
 CMakeFiles/vision.dir/Messaging.cxx.o.provides.build: CMakeFiles/vision.dir/Messaging.cxx.o
 
 CMakeFiles/vision.dir/TimeUtils.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/TimeUtils.cxx.o: TimeUtils.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_26)
+CMakeFiles/vision.dir/TimeUtils.cxx.o: ../TimeUtils.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_26)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/TimeUtils.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/TimeUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/TimeUtils.cxx
 
@@ -291,8 +291,8 @@ CMakeFiles/vision.dir/TimeUtils.cxx.o.provides: CMakeFiles/vision.dir/TimeUtils.
 CMakeFiles/vision.dir/TimeUtils.cxx.o.provides.build: CMakeFiles/vision.dir/TimeUtils.cxx.o
 
 CMakeFiles/vision.dir/Main.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/Main.cxx.o: Main.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_27)
+CMakeFiles/vision.dir/Main.cxx.o: ../Main.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_27)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/Main.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/Main.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Main.cxx
 
@@ -314,8 +314,8 @@ CMakeFiles/vision.dir/Main.cxx.o.provides: CMakeFiles/vision.dir/Main.cxx.o.requ
 CMakeFiles/vision.dir/Main.cxx.o.provides.build: CMakeFiles/vision.dir/Main.cxx.o
 
 CMakeFiles/vision.dir/ProcessRectTarget.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ProcessRectTarget.cxx.o: ProcessRectTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_28)
+CMakeFiles/vision.dir/ProcessRectTarget.cxx.o: ../ProcessRectTarget.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_28)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ProcessRectTarget.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ProcessRectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessRectTarget.cxx
 
@@ -337,8 +337,8 @@ CMakeFiles/vision.dir/ProcessRectTarget.cxx.o.provides: CMakeFiles/vision.dir/Pr
 CMakeFiles/vision.dir/ProcessRectTarget.cxx.o.provides.build: CMakeFiles/vision.dir/ProcessRectTarget.cxx.o
 
 CMakeFiles/vision.dir/ProcessNoTarget.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ProcessNoTarget.cxx.o: ProcessNoTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_29)
+CMakeFiles/vision.dir/ProcessNoTarget.cxx.o: ../ProcessNoTarget.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_29)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ProcessNoTarget.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ProcessNoTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessNoTarget.cxx
 
@@ -360,8 +360,8 @@ CMakeFiles/vision.dir/ProcessNoTarget.cxx.o.provides: CMakeFiles/vision.dir/Proc
 CMakeFiles/vision.dir/ProcessNoTarget.cxx.o.provides.build: CMakeFiles/vision.dir/ProcessNoTarget.cxx.o
 
 CMakeFiles/vision.dir/PoleTarget.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/PoleTarget.cxx.o: PoleTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_30)
+CMakeFiles/vision.dir/PoleTarget.cxx.o: ../PoleTarget.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_30)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/PoleTarget.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/PoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTarget.cxx
 
@@ -383,8 +383,8 @@ CMakeFiles/vision.dir/PoleTarget.cxx.o.provides: CMakeFiles/vision.dir/PoleTarge
 CMakeFiles/vision.dir/PoleTarget.cxx.o.provides.build: CMakeFiles/vision.dir/PoleTarget.cxx.o
 
 CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o: PoleTargetMeasured.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_31)
+CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o: ../PoleTargetMeasured.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_31)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/PoleTargetMeasured.cxx
 
@@ -406,8 +406,8 @@ CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o.provides: CMakeFiles/vision.dir/P
 CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o.provides.build: CMakeFiles/vision.dir/PoleTargetMeasured.cxx.o
 
 CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o: ProcessPoleTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_32)
+CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o: ../ProcessPoleTarget.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_32)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ProcessPoleTarget.cxx
 
@@ -429,8 +429,8 @@ CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o.provides: CMakeFiles/vision.dir/Pr
 CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o.provides.build: CMakeFiles/vision.dir/ProcessPoleTarget.cxx.o
 
 CMakeFiles/vision.dir/Semaphore.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/Semaphore.cxx.o: Semaphore.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_33)
+CMakeFiles/vision.dir/Semaphore.cxx.o: ../Semaphore.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_33)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/Semaphore.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/Semaphore.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Semaphore.cxx
 
@@ -452,8 +452,8 @@ CMakeFiles/vision.dir/Semaphore.cxx.o.provides: CMakeFiles/vision.dir/Semaphore.
 CMakeFiles/vision.dir/Semaphore.cxx.o.provides.build: CMakeFiles/vision.dir/Semaphore.cxx.o
 
 CMakeFiles/vision.dir/ImageBufferManager.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ImageBufferManager.cxx.o: ImageBufferManager.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_34)
+CMakeFiles/vision.dir/ImageBufferManager.cxx.o: ../ImageBufferManager.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_34)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ImageBufferManager.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ImageBufferManager.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageBufferManager.cxx
 
@@ -475,8 +475,8 @@ CMakeFiles/vision.dir/ImageBufferManager.cxx.o.provides: CMakeFiles/vision.dir/I
 CMakeFiles/vision.dir/ImageBufferManager.cxx.o.provides.build: CMakeFiles/vision.dir/ImageBufferManager.cxx.o
 
 CMakeFiles/vision.dir/ImageCapture.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/ImageCapture.cxx.o: ImageCapture.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_35)
+CMakeFiles/vision.dir/ImageCapture.cxx.o: ../ImageCapture.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_35)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/ImageCapture.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/ImageCapture.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/ImageCapture.cxx
 
@@ -498,8 +498,8 @@ CMakeFiles/vision.dir/ImageCapture.cxx.o.provides: CMakeFiles/vision.dir/ImageCa
 CMakeFiles/vision.dir/ImageCapture.cxx.o.provides.build: CMakeFiles/vision.dir/ImageCapture.cxx.o
 
 CMakeFiles/vision.dir/Mutex.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/Mutex.cxx.o: Mutex.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_36)
+CMakeFiles/vision.dir/Mutex.cxx.o: ../Mutex.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_36)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/Mutex.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/Mutex.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Mutex.cxx
 
@@ -521,8 +521,8 @@ CMakeFiles/vision.dir/Mutex.cxx.o.provides: CMakeFiles/vision.dir/Mutex.cxx.o.re
 CMakeFiles/vision.dir/Mutex.cxx.o.provides.build: CMakeFiles/vision.dir/Mutex.cxx.o
 
 CMakeFiles/vision.dir/Process.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/Process.cxx.o: Process.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_37)
+CMakeFiles/vision.dir/Process.cxx.o: ../Process.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_37)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/Process.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/Process.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/Process.cxx
 
@@ -544,8 +544,8 @@ CMakeFiles/vision.dir/Process.cxx.o.provides: CMakeFiles/vision.dir/Process.cxx.
 CMakeFiles/vision.dir/Process.cxx.o.provides.build: CMakeFiles/vision.dir/Process.cxx.o
 
 CMakeFiles/vision.dir/MainWindow.cxx.o: CMakeFiles/vision.dir/flags.make
-CMakeFiles/vision.dir/MainWindow.cxx.o: MainWindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_38)
+CMakeFiles/vision.dir/MainWindow.cxx.o: ../MainWindow.cxx
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_38)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/MainWindow.cxx.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/MainWindow.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/MainWindow.cxx
 
@@ -568,17 +568,17 @@ CMakeFiles/vision.dir/MainWindow.cxx.o.provides.build: CMakeFiles/vision.dir/Mai
 
 CMakeFiles/vision.dir/moc_Defines.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Defines.cxx.o: moc_Defines.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_39)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_39)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Defines.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Defines.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Defines.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx
 
 CMakeFiles/vision.dir/moc_Defines.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Defines.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx > CMakeFiles/vision.dir/moc_Defines.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx > CMakeFiles/vision.dir/moc_Defines.cxx.i
 
 CMakeFiles/vision.dir/moc_Defines.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Defines.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Defines.cxx -o CMakeFiles/vision.dir/moc_Defines.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Defines.cxx -o CMakeFiles/vision.dir/moc_Defines.cxx.s
 
 CMakeFiles/vision.dir/moc_Defines.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Defines.cxx.o.requires
@@ -591,17 +591,17 @@ CMakeFiles/vision.dir/moc_Defines.cxx.o.provides.build: CMakeFiles/vision.dir/mo
 
 CMakeFiles/vision.dir/moc_Mutex.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Mutex.cxx.o: moc_Mutex.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_40)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_40)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Mutex.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Mutex.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Mutex.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx
 
 CMakeFiles/vision.dir/moc_Mutex.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Mutex.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx > CMakeFiles/vision.dir/moc_Mutex.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx > CMakeFiles/vision.dir/moc_Mutex.cxx.i
 
 CMakeFiles/vision.dir/moc_Mutex.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Mutex.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Mutex.cxx -o CMakeFiles/vision.dir/moc_Mutex.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Mutex.cxx -o CMakeFiles/vision.dir/moc_Mutex.cxx.s
 
 CMakeFiles/vision.dir/moc_Mutex.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Mutex.cxx.o.requires
@@ -614,17 +614,17 @@ CMakeFiles/vision.dir/moc_Mutex.cxx.o.provides.build: CMakeFiles/vision.dir/moc_
 
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o: moc_ProcessNoTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_41)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_41)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx
 
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx > CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx > CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.i
 
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessNoTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessNoTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.s
 
 CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o.requires
@@ -637,17 +637,17 @@ CMakeFiles/vision.dir/moc_ProcessNoTarget.cxx.o.provides.build: CMakeFiles/visio
 
 CMakeFiles/vision.dir/moc_Semaphore.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Semaphore.cxx.o: moc_Semaphore.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_42)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_42)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Semaphore.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Semaphore.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Semaphore.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx
 
 CMakeFiles/vision.dir/moc_Semaphore.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Semaphore.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx > CMakeFiles/vision.dir/moc_Semaphore.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx > CMakeFiles/vision.dir/moc_Semaphore.cxx.i
 
 CMakeFiles/vision.dir/moc_Semaphore.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Semaphore.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Semaphore.cxx -o CMakeFiles/vision.dir/moc_Semaphore.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Semaphore.cxx -o CMakeFiles/vision.dir/moc_Semaphore.cxx.s
 
 CMakeFiles/vision.dir/moc_Semaphore.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Semaphore.cxx.o.requires
@@ -660,17 +660,17 @@ CMakeFiles/vision.dir/moc_Semaphore.cxx.o.provides.build: CMakeFiles/vision.dir/
 
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o: moc_ImageBufferManager.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_43)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_43)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx
 
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx > CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx > CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.i
 
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageBufferManager.cxx -o CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageBufferManager.cxx -o CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.s
 
 CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o.requires
@@ -683,17 +683,17 @@ CMakeFiles/vision.dir/moc_ImageBufferManager.cxx.o.provides.build: CMakeFiles/vi
 
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o: moc_OptionsProcess.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_44)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_44)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx
 
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_OptionsProcess.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx > CMakeFiles/vision.dir/moc_OptionsProcess.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx > CMakeFiles/vision.dir/moc_OptionsProcess.cxx.i
 
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_OptionsProcess.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_OptionsProcess.cxx -o CMakeFiles/vision.dir/moc_OptionsProcess.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_OptionsProcess.cxx -o CMakeFiles/vision.dir/moc_OptionsProcess.cxx.s
 
 CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o.requires
@@ -706,17 +706,17 @@ CMakeFiles/vision.dir/moc_OptionsProcess.cxx.o.provides.build: CMakeFiles/vision
 
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o: moc_ProcessPoleTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_45)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_45)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx
 
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx > CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx > CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.i
 
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessPoleTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessPoleTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.s
 
 CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o.requires
@@ -729,17 +729,17 @@ CMakeFiles/vision.dir/moc_ProcessPoleTarget.cxx.o.provides.build: CMakeFiles/vis
 
 CMakeFiles/vision.dir/moc_Thread.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Thread.cxx.o: moc_Thread.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_46)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_46)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Thread.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Thread.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Thread.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx
 
 CMakeFiles/vision.dir/moc_Thread.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Thread.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx > CMakeFiles/vision.dir/moc_Thread.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx > CMakeFiles/vision.dir/moc_Thread.cxx.i
 
 CMakeFiles/vision.dir/moc_Thread.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Thread.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Thread.cxx -o CMakeFiles/vision.dir/moc_Thread.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Thread.cxx -o CMakeFiles/vision.dir/moc_Thread.cxx.s
 
 CMakeFiles/vision.dir/moc_Thread.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Thread.cxx.o.requires
@@ -752,17 +752,17 @@ CMakeFiles/vision.dir/moc_Thread.cxx.o.provides.build: CMakeFiles/vision.dir/moc
 
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.o: moc_ImageCapture.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_47)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_47)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ImageCapture.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageCapture.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageCapture.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx
 
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ImageCapture.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx > CMakeFiles/vision.dir/moc_ImageCapture.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx > CMakeFiles/vision.dir/moc_ImageCapture.cxx.i
 
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ImageCapture.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageCapture.cxx -o CMakeFiles/vision.dir/moc_ImageCapture.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageCapture.cxx -o CMakeFiles/vision.dir/moc_ImageCapture.cxx.s
 
 CMakeFiles/vision.dir/moc_ImageCapture.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ImageCapture.cxx.o.requires
@@ -775,17 +775,17 @@ CMakeFiles/vision.dir/moc_ImageCapture.cxx.o.provides.build: CMakeFiles/vision.d
 
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.o: moc_PoleTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_48)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_48)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_PoleTarget.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_PoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_PoleTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx
 
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_PoleTarget.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx > CMakeFiles/vision.dir/moc_PoleTarget.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx > CMakeFiles/vision.dir/moc_PoleTarget.cxx.i
 
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_PoleTarget.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTarget.cxx -o CMakeFiles/vision.dir/moc_PoleTarget.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTarget.cxx -o CMakeFiles/vision.dir/moc_PoleTarget.cxx.s
 
 CMakeFiles/vision.dir/moc_PoleTarget.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_PoleTarget.cxx.o.requires
@@ -798,17 +798,17 @@ CMakeFiles/vision.dir/moc_PoleTarget.cxx.o.provides.build: CMakeFiles/vision.dir
 
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o: moc_ProcessRectTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_49)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_49)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx
 
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx > CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx > CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.i
 
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ProcessRectTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ProcessRectTarget.cxx -o CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s
 
 CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o.requires
@@ -821,17 +821,17 @@ CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.o.provides.build: CMakeFiles/vis
 
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.o: moc_TimeUtils.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_50)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_50)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_TimeUtils.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_TimeUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_TimeUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx
 
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_TimeUtils.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx > CMakeFiles/vision.dir/moc_TimeUtils.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx > CMakeFiles/vision.dir/moc_TimeUtils.cxx.i
 
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_TimeUtils.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_TimeUtils.cxx -o CMakeFiles/vision.dir/moc_TimeUtils.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_TimeUtils.cxx -o CMakeFiles/vision.dir/moc_TimeUtils.cxx.s
 
 CMakeFiles/vision.dir/moc_TimeUtils.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_TimeUtils.cxx.o.requires
@@ -844,17 +844,17 @@ CMakeFiles/vision.dir/moc_TimeUtils.cxx.o.provides.build: CMakeFiles/vision.dir/
 
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.o: moc_ImageUtils.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_51)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_51)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_ImageUtils.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_ImageUtils.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx
 
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_ImageUtils.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx > CMakeFiles/vision.dir/moc_ImageUtils.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx > CMakeFiles/vision.dir/moc_ImageUtils.cxx.i
 
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_ImageUtils.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_ImageUtils.cxx -o CMakeFiles/vision.dir/moc_ImageUtils.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_ImageUtils.cxx -o CMakeFiles/vision.dir/moc_ImageUtils.cxx.s
 
 CMakeFiles/vision.dir/moc_ImageUtils.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_ImageUtils.cxx.o.requires
@@ -867,17 +867,17 @@ CMakeFiles/vision.dir/moc_ImageUtils.cxx.o.provides.build: CMakeFiles/vision.dir
 
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o: moc_PoleTargetMeasured.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_52)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_52)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx
 
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx > CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx > CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.i
 
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_PoleTargetMeasured.cxx -o CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_PoleTargetMeasured.cxx -o CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.s
 
 CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o.requires
@@ -890,17 +890,17 @@ CMakeFiles/vision.dir/moc_PoleTargetMeasured.cxx.o.provides.build: CMakeFiles/vi
 
 CMakeFiles/vision.dir/moc_RectTarget.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_RectTarget.cxx.o: moc_RectTarget.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_53)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_53)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_RectTarget.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_RectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_RectTarget.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx
 
 CMakeFiles/vision.dir/moc_RectTarget.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_RectTarget.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx > CMakeFiles/vision.dir/moc_RectTarget.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx > CMakeFiles/vision.dir/moc_RectTarget.cxx.i
 
 CMakeFiles/vision.dir/moc_RectTarget.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_RectTarget.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTarget.cxx -o CMakeFiles/vision.dir/moc_RectTarget.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTarget.cxx -o CMakeFiles/vision.dir/moc_RectTarget.cxx.s
 
 CMakeFiles/vision.dir/moc_RectTarget.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_RectTarget.cxx.o.requires
@@ -913,17 +913,17 @@ CMakeFiles/vision.dir/moc_RectTarget.cxx.o.provides.build: CMakeFiles/vision.dir
 
 CMakeFiles/vision.dir/moc_Messaging.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Messaging.cxx.o: moc_Messaging.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_54)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_54)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Messaging.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Messaging.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Messaging.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx
 
 CMakeFiles/vision.dir/moc_Messaging.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Messaging.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx > CMakeFiles/vision.dir/moc_Messaging.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx > CMakeFiles/vision.dir/moc_Messaging.cxx.i
 
 CMakeFiles/vision.dir/moc_Messaging.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Messaging.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Messaging.cxx -o CMakeFiles/vision.dir/moc_Messaging.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Messaging.cxx -o CMakeFiles/vision.dir/moc_Messaging.cxx.s
 
 CMakeFiles/vision.dir/moc_Messaging.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Messaging.cxx.o.requires
@@ -936,17 +936,17 @@ CMakeFiles/vision.dir/moc_Messaging.cxx.o.provides.build: CMakeFiles/vision.dir/
 
 CMakeFiles/vision.dir/moc_Process.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_Process.cxx.o: moc_Process.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_55)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_55)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_Process.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Process.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_Process.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx
 
 CMakeFiles/vision.dir/moc_Process.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_Process.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx > CMakeFiles/vision.dir/moc_Process.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx > CMakeFiles/vision.dir/moc_Process.cxx.i
 
 CMakeFiles/vision.dir/moc_Process.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_Process.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_Process.cxx -o CMakeFiles/vision.dir/moc_Process.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_Process.cxx -o CMakeFiles/vision.dir/moc_Process.cxx.s
 
 CMakeFiles/vision.dir/moc_Process.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_Process.cxx.o.requires
@@ -959,17 +959,17 @@ CMakeFiles/vision.dir/moc_Process.cxx.o.provides.build: CMakeFiles/vision.dir/mo
 
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o: moc_RectTargetMeasured.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_56)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_56)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx
 
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx > CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx > CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.i
 
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_RectTargetMeasured.cxx -o CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_RectTargetMeasured.cxx -o CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.s
 
 CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o.requires
@@ -982,17 +982,17 @@ CMakeFiles/vision.dir/moc_RectTargetMeasured.cxx.o.provides.build: CMakeFiles/vi
 
 CMakeFiles/vision.dir/moc_MainWindow.cxx.o: CMakeFiles/vision.dir/flags.make
 CMakeFiles/vision.dir/moc_MainWindow.cxx.o: moc_MainWindow.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles $(CMAKE_PROGRESS_57)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles $(CMAKE_PROGRESS_57)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/vision.dir/moc_MainWindow.cxx.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_MainWindow.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/vision.dir/moc_MainWindow.cxx.o -c /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx
 
 CMakeFiles/vision.dir/moc_MainWindow.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vision.dir/moc_MainWindow.cxx.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx > CMakeFiles/vision.dir/moc_MainWindow.cxx.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx > CMakeFiles/vision.dir/moc_MainWindow.cxx.i
 
 CMakeFiles/vision.dir/moc_MainWindow.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vision.dir/moc_MainWindow.cxx.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/moc_MainWindow.cxx -o CMakeFiles/vision.dir/moc_MainWindow.cxx.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/moc_MainWindow.cxx -o CMakeFiles/vision.dir/moc_MainWindow.cxx.s
 
 CMakeFiles/vision.dir/moc_MainWindow.cxx.o.requires:
 .PHONY : CMakeFiles/vision.dir/moc_MainWindow.cxx.o.requires
@@ -1175,6 +1175,6 @@ CMakeFiles/vision.dir/depend: moc_Process.cxx
 CMakeFiles/vision.dir/depend: moc_RectTargetMeasured.cxx
 CMakeFiles/vision.dir/depend: moc_MainWindow.cxx
 CMakeFiles/vision.dir/depend: ui_MainWindow.h
-	cd /home/fluffypony/git/Coprocessor-Vision/Coprocessor && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles/vision.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build /home/fluffypony/git/Coprocessor-Vision/Coprocessor/build/CMakeFiles/vision.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/vision.dir/depend
 
