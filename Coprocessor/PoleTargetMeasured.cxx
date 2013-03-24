@@ -32,7 +32,7 @@ float PoleTargetMeasured::computeHighYOffset(float distance) {
           that line is.
 */
 float PoleTargetMeasured::rectSizeXToDistance(float sizeX) {
-  return 9952.5956566118 * pow(sizeX, -1.0154997664);
+  return 2513.9 * pow(sizeX, -1.182);
 }
 
 /**
@@ -40,7 +40,7 @@ float PoleTargetMeasured::rectSizeXToDistance(float sizeX) {
           that line is.
 */
 float PoleTargetMeasured::rectSizeYToDistance(float sizeY) {
-  return 7560.3188994048 * pow(sizeY, -1.0190855673);
+  return 0; /*7560.3188994048 * pow(sizeY, -1.0190855673);*/
 }
 
 /**

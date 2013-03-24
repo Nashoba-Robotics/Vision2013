@@ -10,9 +10,11 @@ using namespace std;
 
 // This is called every time that we get a new image to process the image, get target data,
 // and send the information to the crio
-void ProcessNoTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll,
-				     EventRate &eventRate) {
+void ProcessNoTarget::processImage(Mat &srcImage, Mat &displayImage,
+				   Mat &finalImage, bool guiAll,
+				   EventRate &eventRate) {
   finalImage = srcImage.clone();
+  displayImage = srcImage.clone();
 
 #ifdef DEBUG_TEXT
   Point fpsAlign( 10, 10 );
@@ -28,6 +30,8 @@ void ProcessNoTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll,
 }
 
 ProcessNoTarget::ProcessNoTarget() {
+  imageNames.resize(1);
+  imageNames[imageIdFinal] = "Final Image";
 }
 
 void ProcessNoTarget::initGui(bool guiAll) {

@@ -2,14 +2,37 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "ImageUtils.h"
+#include <stdio.h>
 using namespace cv;
 using namespace std;
+
+
+cv::Mat ImageUtils::convertToRGB(cv::Mat src) {
+  cv::Mat ret;
+  //  printf("Channels %d\n", src.channels());
+  //  printf("Depth %d\n", src.depth());
+  switch (src.channels()) {
+  case 1: {
+    Mat channels[] = {src, src, src};
+    cv::merge(channels, 3, ret);
+    break;
+  }
+  case 3: {
+    ret = src;
+    break;
+  }
+  default:
+    printf("Unknown number of channels %d\n", src.channels());
+  }
+  return ret;
+}
+
 
 /**
    @brief     Calculate and display histogram of an image.
    @param[in] src  Source image matrix to compute the histogram on.
 */
-void ImageUtils::calcHistogram(Mat &src) {
+void ImageUtils::calcHistogram(Mat &src, Mat &histImage) {
   // Separate the image in 3 places ( R, G and B )
   vector<Mat> rgb_planes;
   split( src, rgb_planes );
@@ -33,8 +56,8 @@ void ImageUtils::calcHistogram(Mat &src) {
   // Draw the histograms for R, G and B
   int hist_w = 400; int hist_h = 400;
   int bin_w = cvRound( (double) hist_w/histSize );
-  
-  Mat histImage( hist_w, hist_h, CV_8UC3, Scalar( 0,0,0) );
+
+  histImage = Mat::zeros(src.size(), CV_8UC3);
   
   // Normalize the result to [ 0, histImage.rows ]
   normalize(r_hist, r_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
@@ -53,10 +76,6 @@ void ImageUtils::calcHistogram(Mat &src) {
 	 Point( bin_w*(i), hist_h - cvRound(b_hist.at<float>(i)) ),
 	 Scalar( 0, 0, 255), 2, 8, 0  );
   }
-  
-  // Display
-  namedWindow("Histogram", CV_WINDOW_AUTOSIZE );
-  imshow("Histogram", histImage );
 }
 
 /**
@@ -166,7 +185,7 @@ bool ImageUtils::findLineSegments(vector<Point> &targetQuad, vector<Point> &targ
     int k = 0;
     while (targetQuad[0] != targetHull[k]) {
       if (k > targetHull.size()) {
-	printf("Error - could not find target");
+	//printf("Error - could not find target");
 	return false;
       }
       k++;
@@ -178,7 +197,7 @@ bool ImageUtils::findLineSegments(vector<Point> &targetQuad, vector<Point> &targ
       line1.push_back(targetHull[k]);
       k++;
       if (k == targetHull.size()) {
-	printf("Error - could not find target");
+	//printf("Error - could not find target");
 	return false;
       }
     }
@@ -187,7 +206,7 @@ bool ImageUtils::findLineSegments(vector<Point> &targetQuad, vector<Point> &targ
       line2.push_back(targetHull[k]);
       k++;
       if (k == targetHull.size()) {
-	printf("Error - could not find target");
+	//printf("Error - could not find target");
 	return false;
       }
     }
@@ -196,7 +215,7 @@ bool ImageUtils::findLineSegments(vector<Point> &targetQuad, vector<Point> &targ
       line3.push_back(targetHull[k]);
       k++;
       if (k == targetHull.size()) {
-	printf("Error - could not find target");
+	//printf("Error - could not find target");
 	return false;
       }
     }
@@ -229,14 +248,18 @@ bool ImageUtils::rectContainsRect(int i, const vector<vector<Point> > &prunedPol
   return false;
 }
 
-string ImageUtils::getOutputVideoFileName() {
-  char outputFileName[100];
-  time_t beginningTime;      // beginningTime and end times
+std::string ImageUtils::getOutputVideoFileName(std::string name) {
+  std::string outputName;
+  char outputSuffix[100];
+  time_t beginningTime;      // beginningTime and end timens
   tm *timeTm;
   time(&beginningTime);           // start the clock
   timeTm = localtime(&beginningTime);
-  strftime(outputFileName, sizeof(outputFileName)-1, "RobotVideo_%Y_%m_%d_%H_%M_%S.mjpg", timeTm);
-  return outputFileName;
+  outputName = "RobotVideo";
+  outputName += name;
+  strftime(outputSuffix, sizeof(outputSuffix)-1, "_%Y_%m_%d_%H_%M_%S.mjpg", timeTm);
+  outputName += outputSuffix;
+  return outputName;
 }
 
 void ImageUtils::writeImage(Mat &src) {
@@ -249,3 +272,28 @@ void ImageUtils::writeImage(Mat &src) {
   imwrite(outputFileName, src);
 }
 
+void ImageUtils::rotatePt(cv::Point &pt, cv::Point originPt, double angle) {
+  cv::Point temp;
+  temp.x = (pt.x - originPt.x) * cos(angle) -
+    (pt.y - originPt.y) * sin(angle) + originPt.x;
+  temp.y = (pt.x - originPt.x) * sin(angle) +
+    (pt.y - originPt.y) * cos(angle) + originPt.y;
+  pt = temp;
+}
+
+void ImageUtils::rotatePts(cv::Point *pt, int numPts, cv::Point originPt, double angle) {
+  for (int i = 0; i < numPts; i++) {
+    rotatePt(pt[i], originPt, angle);
+  }
+}
+
+void ImageUtils::translatePt(cv::Point &pt, cv::Point delta) {
+  pt.x += delta.x;
+  pt.y += delta.y;
+}
+
+void ImageUtils::translatePts(cv::Point *pt, int numPts, cv::Point delta) {
+  for (int i = 0; i < numPts; i++) {
+    translatePt(pt[i], delta);
+  }
+}

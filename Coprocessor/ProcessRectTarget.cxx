@@ -1,11 +1,13 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include <stdio.h>
 #include "Defines.h"
 #include "RectTargetMeasured.h"
 #include "RectTarget.h"
 #include "Messaging.h"
 #include "ImageUtils.h"
 #include "ProcessRectTarget.h"
+#include "VisionDefines.h"
 using namespace cv;
 using namespace std;
 
@@ -48,26 +50,23 @@ void ProcessRectTarget::targetsDebugText(Mat &finalDrawing, RectTarget &target) 
   Point distanceAlign( target.centerX - 50, target.centerY + 65 );
   Point angleXAlign( target.centerX - 50, target.centerY + 80 );
   Point typeTargetAlign( target.centerX - 50, target.centerY + 95 );
-  Point tensionAlign( target.centerX - 50, target.centerY + 110 );
-  ostringstream text, size, distance, angle, typeTarget, tension;
-  text << "aaaCenter: X: " << target.centerX << " Y: " << target.centerY;
+  ostringstream text, size, distance, angle, typeTarget;
+  text << "Center: X: " << target.centerX << " Y: " << target.centerY;
   distance << "Distance: X: " << target.distanceX << " Y: " << target.distanceY;
   size << "Size: X: " << target.sizeX << " Y: " << target.sizeY;
   angle << "Angle: X: " << target.angleX;
   typeTarget << target.getTargetTypeString();
-  tension << "Tension: " << target.tension;
   putText(finalDrawing, text.str(), textAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
   putText(finalDrawing, size.str(), sizeAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
   putText(finalDrawing, distance.str(), distanceAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
   putText(finalDrawing, angle.str(), angleXAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
   putText(finalDrawing, typeTarget.str(), typeTargetAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
-  putText(finalDrawing, tension.str(), tensionAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
 #endif
 }
 
 // This is called every time that we get a new image to process the image, get target data,
 // and send the information to the crio
-void ProcessRectTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll,
+void ProcessRectTarget::processImage(Mat &srcImage, Mat &displayImage, Mat &finalImage, bool guiAll,
 				     EventRate &eventRate) {
   //  static vector<Mat> planes;
   //  static Mat grayScale;
@@ -96,10 +95,15 @@ void ProcessRectTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
   cvtColor(images.blurred, images.hsvImage, CV_RGB2HSV);
   split(images.hsvImage, images.planes);
 
+  HsvThreshold::Params hsvParams = hsvThreshold.getParams();
   inRange(images.hsvImage,  
-	  Scalar(params.huelow, params.satlow, params.valuelow),  
-	  Scalar(params.huehigh, params.sathigh, params.valuehigh),  
-	  images.thresholded);  
+	  Scalar( hsvParams.huelow, hsvParams.satlow, hsvParams.valuelow),  
+	  Scalar( hsvParams.huehigh, hsvParams.sathigh, hsvParams.valuehigh),  
+	  images.thresholded);
+  //  inRange(images.hsvImage,  
+  //	  Scalar(params.huelow, params.satlow, params.valuelow),  
+  //	  Scalar(params.huehigh, params.sathigh, params.valuehigh),  
+  //	  images.thresholded);  
 
   /// Detect edges using Threshold
   //  threshold(images.blurred, images.thresholded,
@@ -185,72 +189,33 @@ void ProcessRectTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
   
   vector<RectTarget> targets;
   RectTarget::getRectTarget(srcImage, targetQuads2f, targets);
+
+  vector<RectTarget> prunedTargets(0);
+  vector<vector<Point> >prunedTargetQuads2fi(0);
+  vector<vector<Point> >prunedTargetQuads(0);
+  float aspectRatio = 3.1;
+  for (int i=0; i < targets.size(); i++) {
+    if ((targets[i].aspectRatio < (aspectRatio *1.1)) &&
+	(targets[i].aspectRatio > (aspectRatio * .9))) {
+      prunedTargets.push_back(targets[i]);
+      prunedTargetQuads2fi.push_back(targetQuads2fi[i]);
+      prunedTargetQuads.push_back(targetQuads[i]);
+    }
+  }
+  
   TargetGroup targetGroup;
-  RectTarget::computeTargetGroups(srcImage, targets, targetGroup);
+  RectTarget::computeTargetGroups(srcImage, prunedTargets, targetGroup);
 
   //  printTargets(targets);
   
-  if (guiAll) {
-    //static Mat contours;
-    /// Draw contours + hull results
-    images.contours = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for( int i = 0; i< contours.size(); i++ ) {
-      drawContours(images.contours, contours, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-
-    // Draw the contours in a window
-    //    Mat
-    images.polygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for( int i = 0; i< contours.size(); i++ ) {
-      drawContours(images.polygons, poly, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the pruned Poloygons in a window
-    //Mat
-    images.prunedPolygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for (int i=0; i < prunedPoly.size(); i++) {
-      drawContours(images.prunedPolygons, prunedPoly, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the targets
-    //Mat
-    images.targets = Mat::zeros( images.thresholded.size(), CV_8UC3 );
-    for (int i=0; i < targetQuads.size(); i++) {
-      drawContours(images.targets, targetQuads, i, ColorGray, 1, 8, vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the targets
-    //Mat targets2fi = Mat::zeros( thresholded.size(), CV_8UC3 );
-    for (int i=0; i < targetQuads2fi.size(); i++) {
-      drawContours(images.targets, targetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
-    }
-    ImageUtils::calcHistogram(srcImage);
-    imshow("Source", srcImage);
-    imshow("Red", images.planes[RED_PLANE]);
-    imshow("Blue", images.planes[BLUE_PLANE]);
-    imshow("Green", images.planes[GREEN_PLANE]);
-    imshow("GrayScaleImage", images.grayScale);
-    imshow("Blur", images.blurred);
-    imshow("Dilate", images.dilated);
-    imshow("Threshold", images.thresholded);
-    imshow("Contours", images.contours);
-    imshow("Polygon", images.polygons);
-    imshow("PrunedPolygon", images.prunedPolygons);
-    imshow("Targets", images.targets);
-  }
-
   // Output the final image
-  //  static  Mat finalDrawing;
   finalImage = srcImage.clone();
   // Show first approx for lines
-    for (int i=0; i < targetQuads.size(); i++) {
-      drawContours(finalImage, targetQuads, i, ColorBlue, 1, 8, vector<Vec4i>(), 0, Point() );
-    }
-  for (int i=0; i < targetQuads2fi.size(); i++) {
-    drawContours(finalImage, targetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
+  for (int i=0; i < prunedTargetQuads.size(); i++) {
+    drawContours(finalImage, prunedTargetQuads, i, ColorBlue, 1, 8, vector<Vec4i>(), 0, Point() );
+  }
+  for (int i=0; i < prunedTargetQuads2fi.size(); i++) {
+    drawContours(finalImage, prunedTargetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
   }
 
 #ifdef DEBUG_TEXT
@@ -261,14 +226,20 @@ void ProcessRectTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
   putText( finalImage, fpsText.str(), fpsAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite );
 #endif
 
-  for (int i = 0; i < targets.size(); i++ ) {
-    Point center( targets[i].centerX, targets[i].centerY );
+  for (int i = 0; i < prunedTargets.size(); i++ ) {
+    Point center( prunedTargets[i].centerX, prunedTargets[i].centerY );
     circle( finalImage, center, 10, ColorWhite );
-    targetsDebugText(finalImage, targets[i]);
+    targetsDebugText(finalImage, prunedTargets[i]);
   }
   Point topCenterImagePt(finalImage.cols/2, 0);
   Point bottomCenterImagePt(finalImage.cols/2, finalImage.rows);
   line(finalImage, topCenterImagePt, bottomCenterImagePt, ColorWhite, 2);
+
+  // Display a horizontal line so that we know that we are at the correct distance
+  int targetLineHeight = .3 * finalImage.rows;
+  Point rightTargetImagePt(0, targetLineHeight);
+  Point leftTargetImagePt(finalImage.cols, targetLineHeight);
+  line(finalImage, rightTargetImagePt, leftTargetImagePt, ColorWhite, 2);
 
   // If we have a target then send it to the cRio
   if (targetGroup.selected.valid) {
@@ -284,17 +255,98 @@ void ProcessRectTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
     sendMessageRect(CRIO_IP_ADDR, targetGroup.selected.distanceY, targetGroup.selected.angleX, tension);
     //#endif
   }
-  
-  //  imshow("Final", finalImage);
+
+  switch (imageId) {
+  case imageIdGrayScale: displayImage = ImageUtils::convertToRGB(images.grayScale.clone()); break;
+  case imageIdBlurred:   displayImage = ImageUtils::convertToRGB(images.blurred.clone()); break;
+  case imageIdDilated:   displayImage = ImageUtils::convertToRGB(images.dilated.clone()); break;
+  case imageIdHSV:            displayImage = ImageUtils::convertToRGB(images.hsvImage.clone()); break;
+  case imageIdThresholded:    displayImage = ImageUtils::convertToRGB(images.thresholded.clone()); break;
+  case imageIdHistogram: {
+    ImageUtils::calcHistogram(srcImage, images.histImage);
+    displayImage = ImageUtils::convertToRGB(images.histImage.clone()); break;
+  }
+  case imageIdContours: {
+    images.contours = Mat::zeros(srcImage.size(), CV_8UC3 );
+    for( int i = 0; i< contours.size(); i++ ) {
+      drawContours(images.contours, contours, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+    displayImage = ImageUtils::convertToRGB(images.contours.clone());
+    break;
+  }
+  case imageIdPolygons:  {
+    // Draw the contours in a window
+    images.polygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
+    for( int i = 0; i< contours.size(); i++ ) {
+      drawContours(images.polygons, poly, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+
+    displayImage = ImageUtils::convertToRGB(images.polygons.clone());
+    break;
+  }
+  case imageIdPrunedPolygons: {
+    // Draw the pruned Poloygons in a window
+    images.prunedPolygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
+    for (int i=0; i < prunedPoly.size(); i++) {
+      drawContours(images.prunedPolygons, prunedPoly, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+    
+    displayImage = ImageUtils::convertToRGB(images.prunedPolygons.clone());
+    break;
+  }
+  case imageIdTargets: {
+    // Draw the targets
+    //Mat
+    images.targets = Mat::zeros( images.thresholded.size(), CV_8UC3 );
+    for (int i=0; i < targetQuads.size(); i++) {
+      drawContours(images.targets, targetQuads, i, ColorGray, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    // Draw the targets
+    //Mat targets2fi = Mat::zeros( thresholded.size(), CV_8UC3 );
+    for (int i=0; i < targetQuads2fi.size(); i++) {
+      drawContours(images.targets, targetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    displayImage = ImageUtils::convertToRGB(images.targets.clone());
+    break;
+  }
+  case imageIdPrunedTargets: {
+    // Draw the targets
+    //Mat
+    images.prunedTargets = Mat::zeros( images.thresholded.size(), CV_8UC3 );
+    for (int i=0; i < prunedTargetQuads.size(); i++) {
+      drawContours(images.prunedTargets, prunedTargetQuads, i, ColorGray, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    // Draw the targets
+    //Mat targets2fi = Mat::zeros( thresholded.size(), CV_8UC3 );
+    for (int i=0; i < prunedTargetQuads2fi.size(); i++) {
+      drawContours(images.prunedTargets, prunedTargetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    displayImage = ImageUtils::convertToRGB(images.prunedTargets.clone());
+    break;
+  }
+  case imageIdFinal:          displayImage = ImageUtils::convertToRGB(finalImage.clone()); break;
+  default: printf("Illegal image case\n"); exit(-1);
+  }
+    //    	sleep(1);
 }
 
-ProcessRectTarget::ProcessRectTarget() {
-  params.huelow = 18;
-  params.huehigh = 44;
-  params.satlow = 31;
-  params.sathigh = 255;
-  params.valuelow = 230;
-  params.valuehigh = 255;
+ProcessRectTarget::ProcessRectTarget() : imageId(imageIdFinal),
+					 hsvThreshold(false,
+						      Vision::RectTarget::HSVThreshold::HueLow,
+						      Vision::RectTarget::HSVThreshold::HueHigh,
+						      0, 0,
+						      Vision::RectTarget::HSVThreshold::SatLow,
+						      Vision::RectTarget::HSVThreshold::SatHigh,
+						      Vision::RectTarget::HSVThreshold::ValueLow,
+						      Vision::RectTarget::HSVThreshold::ValueHigh)
+{
   params.thresh = 113;                   //!< Defines the threshold level to apply to image
   params.thresh_block_size = 23;        //!< Defines the threshold block size to apply to image
   params.max_thresh_block_size = 255;   //!< Defines the threshold block size to apply to image
@@ -322,25 +374,25 @@ ProcessRectTarget::ProcessRectTarget() {
   
   params.target_width_inches = 24;      //!< Width of a physical target in inches
   params.target_height_inches = 16;     //!< Height of a physical target in inches
+
+  imageNames.resize(12);
+  imageNames[imageIdGrayScale] = "Gray Scale Image";
+  imageNames[imageIdHistogram] = "Histogram Image";
+  imageNames[imageIdBlurred] = "Blurred Image";
+  imageNames[imageIdDilated] = "Dilated Image";
+  imageNames[imageIdHSV] = "HSV Image";
+  imageNames[imageIdThresholded] = "Thresholded Image";
+  imageNames[imageIdContours] = "Contours Image";
+  imageNames[imageIdPolygons] = "Polygons Image";
+  imageNames[imageIdPrunedPolygons] = "Pruned Polygons Image";
+  imageNames[imageIdTargets] = "Targets Image";
+  imageNames[imageIdPrunedTargets] = "Pruned Targets Image";
+  imageNames[imageIdFinal] = "Final Image";
 }
 
 void ProcessRectTarget::initGui(bool guiAll) {
   /// Create Window
   if (guiAll) {
-    namedWindow("Source", CV_WINDOW_AUTOSIZE );
-    namedWindow("Red", CV_WINDOW_AUTOSIZE );
-    namedWindow("Blue", CV_WINDOW_AUTOSIZE );
-    namedWindow("Green", CV_WINDOW_AUTOSIZE );
-    namedWindow("GrayScaleImage", CV_WINDOW_AUTOSIZE );
-    namedWindow("Blur", CV_WINDOW_AUTOSIZE );
-    namedWindow("Dilate", CV_WINDOW_AUTOSIZE );
-    namedWindow("Threshold", CV_WINDOW_AUTOSIZE );
-    namedWindow("Contours", CV_WINDOW_AUTOSIZE );
-    namedWindow("Polygon", CV_WINDOW_AUTOSIZE );
-    namedWindow("PrunedPolygon", CV_WINDOW_AUTOSIZE );
-    namedWindow("Targets", CV_WINDOW_AUTOSIZE );
-    namedWindow("Final", CV_WINDOW_AUTOSIZE | CV_GUI_EXPANDED);
-
     createTrackbar("Red", "GrayScaleImage", &params.trackRed, params.max_colorsize, dummyCallback);
     createTrackbar("Green", "GrayScaleImage", &params.trackGreen, params.max_colorsize, dummyCallback);
     createTrackbar("Blue", "GrayScaleImage", &params.trackBlue, params.max_colorsize, dummyCallback);
@@ -349,12 +401,6 @@ void ProcessRectTarget::initGui(bool guiAll) {
 
     //    createTrackbar("threshold", "Threshold", &params.thresh, params.max_thresh, dummyCallback);
     //    createTrackbar("block size", "Threshold", &params.thresh_block_size, params.max_thresh_block_size, dummyCallback);
-    createTrackbar("huelow", "Threshold", &params.huelow, 255, dummyCallback);
-    createTrackbar("huehigh", "Threshold", &params.huehigh, 255, dummyCallback);
-    createTrackbar("satlow", "Threshold", &params.satlow, 255, dummyCallback);
-    createTrackbar("sathigh", "Threshold", &params.sathigh, 255, dummyCallback);
-    createTrackbar("valuelow", "Threshold", &params.valuelow, 255, dummyCallback);
-    createTrackbar("valuehigh", "Threshold", &params.valuehigh, 255, dummyCallback);
 
     createTrackbar("Poly epsilon", "Polygon", &params.poly_epsilon, params.max_poly_epsilon, dummyCallback);
     createTrackbar("Element: 0:Rect 1:Cross 2:Ellipse", "Dilate", &params.dilation_elem, params.max_elem, dummyCallback);

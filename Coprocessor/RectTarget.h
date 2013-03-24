@@ -26,6 +26,7 @@ class RectTarget {
   float centerY;   //!< Vertical center of target
   float sizeX;     //!< Horizontal size of target
   float sizeY;     //!< Vertical size of target
+  float aspectRatio;
   float distanceX; //!< Distance to the horizontal lines of the target
   float distanceY; //!< Distance to the vertical lines of target
   float angleX;    //!< Angle that the target is off center

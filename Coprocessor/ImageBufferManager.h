@@ -4,14 +4,15 @@
 #include <list>
 #include "Semaphore.h"
 #include "Mutex.h"
+//#include <QMutex>
 
-/**
+/** 
    @brief Image Buffer
 */
 class ImageBufferManager {
  public:
   static const int BUFFER_EMPTY = -1;
-  static const int NUM_BUFS = 14;
+  static const int NUM_BUFS = 20;
 
   class Buffers {
   public:
@@ -20,6 +21,7 @@ class ImageBufferManager {
     bool areEmpty(void);
 
     int source;
+    int display;
     int final;
   };
   

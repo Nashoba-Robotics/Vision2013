@@ -27,6 +27,10 @@ class OptionsProcess {
   int numCameras;
   int camera;
   char *fileName;
+  int videoFileFrameDelay;
+  int writeVideoSource;
+  int writeVideoDisplay;
+  int writeVideoFinal;
   void setProcessingType(TargetType type);
   TargetType getProcessingType();
   void setCamera(int cam);
@@ -36,7 +40,11 @@ class OptionsProcess {
     fileName(0),
     pauseImage(false),
     numCameras(3),
-    camera(0) {
+    camera(0),
+    writeVideoSource(0),
+    writeVideoDisplay(0),
+    writeVideoFinal(0),
+    videoFileFrameDelay(33000) {
   }
   int processArgs(int argc, char** argv);
   Mutex mutex;

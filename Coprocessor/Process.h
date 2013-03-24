@@ -9,6 +9,7 @@
 
 class OptionsProcess;
 class ImageBufferManager;
+class ProcessTargetBase;
 
 /**
   @brief This class is used to process images.
@@ -19,8 +20,16 @@ public:
   void init(void);
   void run(void);
   void stop(void);
+  ProcessTargetBase *getProcessing(void);
+  void writeDefines(FILE *file, std::string indent);
+  void writeVideo(cv::Mat &srcImage, cv::Mat &displayImage, cv::Mat &finalImage);
+
 
  private:
+  cv::VideoWriter *recordSource;
+  cv::VideoWriter *recordDisplay;
+  cv::VideoWriter *recordFinal;
+
   OptionsProcess *options;
   ImageBufferManager *imageBufferManager;
   ProcessNoTarget processNoTarget;

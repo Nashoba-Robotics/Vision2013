@@ -15,6 +15,7 @@ public:
   void init(void);
   void run(void);
   void stop(void);
+  int camera;
 
  private:
   cv::VideoCapture *cap;
@@ -23,6 +24,7 @@ public:
   cv::VideoCapture *cap2;
   OptionsProcess *options;
   ImageBufferManager *imageBufferManager;
+  cv::Mat previousImage;
   bool stopped;
 };
 

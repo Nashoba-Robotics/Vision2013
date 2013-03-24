@@ -14,18 +14,11 @@
 #include "TimeUtils.h"
 #include "ImageUtils.h"
 #include "Process.h"
-//#include "ProcessNoTarget.h"
-//#include "ProcessRectTarget.h"
-//#include "ProcessPoleTarget.h"
 #include "ImageBufferManager.h"
 #include "ImageCapture.h"
 
 #include <QApplication>
 #include "MainWindow.h"
-
-//cv::Mat srcImage;
-//cv::Mat finalImage;
-//EventRate eventRate;
 
 // Command line argument processing
 OptionsProcess options;
@@ -33,11 +26,6 @@ OptionsProcess options;
 ImageBufferManager imageBufferManager;
 
 int main( int argc, char** argv ) {
-  ProcessNoTarget processNoTarget;
-  ProcessRectTarget processRectTarget;
-  ProcessPoleTarget processRedPoleTarget(ProcessPoleTarget::RedTarget);
-  ProcessPoleTarget processBluePoleTarget(ProcessPoleTarget::BlueTarget);
-
   cv::VideoWriter *record = 0;
   
   // Process any opencv arguments
@@ -48,7 +36,7 @@ int main( int argc, char** argv ) {
   ImageCapture imageCapture(&options, &imageBufferManager);
   Process process(&options, &imageBufferManager);
 
-  MainWindow mainwin(&imageBufferManager, &options);
+  MainWindow mainwin(&imageBufferManager, &options, &process);
   mainwin.show();
   
   imageCapture.init();
@@ -59,11 +47,9 @@ int main( int argc, char** argv ) {
   process.startThread();
 
 #if 0
-  //  dilation_callback(0,0);
   while (1) {
     timespec time1, time2, time3, time4, time5;
 
-    
     clock_gettime(CLOCK_REALTIME, &time1);
     //    imageCapture.run();
     clock_gettime(CLOCK_REALTIME, &time2);
@@ -74,11 +60,6 @@ int main( int argc, char** argv ) {
     //    }
     //    process.run();
     clock_gettime(CLOCK_REALTIME, &time3);
-
-    ImageBufferManager::Buffers buffers = imageBufferManager.displayBegin();
-    cv::Mat &finalImage = imageBufferManager.getBuffer(buffers.final);
-    //    imshow("Final", finalImage);
-    imageBufferManager.displayComplete(buffers);
 
     char c = 0;
     if (options.processVideo) {
@@ -94,11 +75,7 @@ int main( int argc, char** argv ) {
     clock_gettime(CLOCK_REALTIME, &time4);
 
     if (c == 'q') return 0;
-    /*    if (c == '0') cap = cap0;
-    if (c == '1') cap = cap1;
-    if (c == '2') cap = cap2;*/
-    if (c == 'p') options.pauseImage = !options.pauseImage;
-    //    if (c == 'w') ImageUtils::writeImage(srcImage);
+
     clock_gettime(CLOCK_REALTIME, &time5);
     #ifdef DEBUG_PROCESSING_TIME
     printf("Retrieve:         %0ld:%09ld\n", TimeUtils::diff(time1,time2).tv_sec, TimeUtils::diff(time1,time2).tv_nsec);
@@ -116,6 +93,7 @@ int main( int argc, char** argv ) {
   process.stop();
   imageCapture.waitThreadExit();
   process.waitThreadExit();
+  sleep(1);
   
   if (record) delete record;
   return 0;

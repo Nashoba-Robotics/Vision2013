@@ -32,7 +32,7 @@ float RectTargetMeasured::computeHighYOffset(float distance) {
           that line is.
 */
 float RectTargetMeasured::rectSizeXToDistance(float sizeX) {
-  return 9952.5956566118 * pow(sizeX, -1.0154997664);
+  return 9952.5956566118 * pow(sizeX * 24.0/62.0 / 2.0, -1.0154997664);
 }
 
 /**
@@ -40,7 +40,7 @@ float RectTargetMeasured::rectSizeXToDistance(float sizeX) {
           that line is.
 */
 float RectTargetMeasured::rectSizeYToDistance(float sizeY) {
-  return 7560.3188994048 * pow(sizeY, -1.0190855673);
+  return 7560.3188994048 * pow(sizeY * 20.0/16.0 /2.0, -1.0190855673);
 }
 
 /**

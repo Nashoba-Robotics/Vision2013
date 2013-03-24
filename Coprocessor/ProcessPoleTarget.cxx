@@ -1,7 +1,9 @@
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include <stdio.h>
 #include "Defines.h"
 #include "PoleTargetMeasured.h"
+#include "VisionDefines.h"
 #include "PoleTarget.h"
 #include "Messaging.h"
 #include "ImageUtils.h"
@@ -52,7 +54,7 @@ void ProcessPoleTarget::targetsDebugText(Mat &finalDrawing, PoleTarget &target) 
   ostringstream text, size, distance, angle, anglePole;
   text << "Pole Center: X: " << target.centerX << " Y: " << target.centerY;
   distance << "Distance: X: " << target.distanceX << " Y: " << target.distanceY;
-  size << "Size: X: " << target.sizeX << " Y: " << target.sizeY;
+  size << "Size: X: " << target.sizeX << " Y: " << target.sizeY << " Area: " << target.sizeX * target.sizeY;
   angle << "Angle: X: " << target.angleX;
   anglePole << "AnglePole: " << target.anglePole << " AnglePerp: " << target.anglePerpendicular;
   putText(finalDrawing, text.str(), textAlign, CV_FONT_HERSHEY_PLAIN, .7, ColorWhite);
@@ -66,11 +68,13 @@ void ProcessPoleTarget::targetsDebugText(Mat &finalDrawing, PoleTarget &target) 
 
 // This is called every time that we get a new image to process the image, get target data,
 // and send the information to the crio
-void ProcessPoleTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll,
+void ProcessPoleTarget::processImage(Mat &srcImage, Mat &displayImage,
+				     Mat &finalImage, bool guiAll,
 				     EventRate &eventRate) {
   //  static vector<Mat> planes;
   //  static Mat grayScale;
-  GaussianBlur(srcImage, images.blurred, Size( 5, 5 ), 0, 0 );
+  //  GaussianBlur(srcImage, images.blurred, Size( 5, 5 ), 0, 0 );
+  GaussianBlur(srcImage, images.blurred, Size( 9, 9 ), 0, 0 );
   split(images.blurred, images.planes);
   
   // Keep the color that we are intested in and substract off the other planes
@@ -91,11 +95,19 @@ void ProcessPoleTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
   
   //static Mat thresholded;
   //  images.thresholded = images.blurred.clone();
-  
-  cvtColor(images.blurred, images.hsvImage, CV_RGB2HSV);
+
+  // Swap Red and blue
+  images.temp = images.blurred.clone();
+  cvtColor(images.temp, images.hsvImage, CV_RGB2HSV);
   split(images.hsvImage, images.planes);
 
-  if (targetColor == BlueTarget) {
+  //  HsvThreshold::Params hsvParams = hsvThreshold.getParams();
+  //  inRange(images.hsvImage,  
+  //	  Scalar( hsvParams.huelow, hsvParams.satlow, hsvParams.valuelow),  
+  //	  Scalar( hsvParams.huehigh, hsvParams.sathigh, hsvParams.valuehigh),  
+  //	  images.thresholded);
+  hsvThreshold.thresholdImage(images.hsvImage, images.thresholded);
+  /*  if (targetColor == BlueTarget) {
     inRange(images.hsvImage,  
 	    Scalar( 0, 75, 100),  
 	    Scalar( 50, 255, 255),  
@@ -105,7 +117,7 @@ void ProcessPoleTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
 	    Scalar( 110, 75, 100),  
 	    Scalar( 140, 255, 255),  
 	    images.thresholded);
-  }
+	    }*/
 
   int rows = images.thresholded.rows;
   int cols = images.thresholded.cols;
@@ -208,61 +220,8 @@ void ProcessPoleTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
   PoleTarget &bestTarget = PoleTarget::getBestPoleTarget(targets, tempTarget);
 
   //  printTargets(targets);
-  
-  if (guiAll) {
-    //static Mat contours;
-    /// Draw contours + hull results
-    images.contours = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for( int i = 0; i< contours.size(); i++ ) {
-      drawContours(images.contours, contours, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-
-    // Draw the contours in a window
-    //    Mat
-    images.polygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for( int i = 0; i< contours.size(); i++ ) {
-      drawContours(images.polygons, poly, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the pruned Poloygons in a window
-    //Mat
-    images.prunedPolygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
-    for (int i=0; i < prunedPoly.size(); i++) {
-      drawContours(images.prunedPolygons, prunedPoly, i, ColorWhite, 1, 8,
-		   vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the targets
-    //Mat
-    images.targets = Mat::zeros( images.thresholded.size(), CV_8UC3 );
-    for (int i=0; i < targetQuads.size(); i++) {
-      drawContours(images.targets, targetQuads, i, ColorGray, 1, 8, vector<Vec4i>(), 0, Point() );
-    }
-    
-    // Draw the targets
-    //Mat targets2fi = Mat::zeros( thresholded.size(), CV_8UC3 );
-    for (int i=0; i < targetQuads2fi.size(); i++) {
-      drawContours(images.targets, targetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
-    }
-    ImageUtils::calcHistogram(srcImage);
-    imshow("Source", srcImage);
-    imshow("Red", images.planes[RED_PLANE]);
-    imshow("Blue", images.planes[BLUE_PLANE]);
-    imshow("Green", images.planes[GREEN_PLANE]);
-    imshow("GrayScaleImage", images.grayScale);
-    imshow("Blur", images.blurred);
-    imshow("Dilate", images.dilated);
-    imshow("Threshold", images.thresholded);
-    imshow("Contours", images.contours);
-    imshow("Polygon", images.polygons);
-    imshow("PrunedPolygon", images.prunedPolygons);
-    imshow("Targets", images.targets);
-  }
 
   // Output the final image
-  //  static  Mat finalDrawing;
   finalImage = srcImage.clone();
   // Show first approx for lines
     for (int i=0; i < targetQuads.size(); i++) {
@@ -300,14 +259,162 @@ void ProcessPoleTarget::processImage(Mat &srcImage, Mat &finalImage, bool guiAll
     //#ifdef CRIO_NETWORK
     //    float tension = PoleTargetMeasured::convertDistanceToTension(targetGroup.selected.distanceY);
     //    printf("Here\n");
-    sendMessagePole(CRIO_IP_ADDR, bestTarget.distanceY, bestTarget.angleX, bestTarget.anglePole);
+    sendMessagePole(CRIO_IP_ADDR, bestTarget.distanceX, bestTarget.angleX, bestTarget.anglePerpendicular);
     //#endif
   }
-  
-  //  imshow("Final", finalImage);
+
+  switch (imageId) {
+  case imageIdGrayScale: displayImage = ImageUtils::convertToRGB(images.grayScale.clone()); break;
+  case imageIdBlurred:   displayImage = ImageUtils::convertToRGB(images.blurred.clone()); break;
+  case imageIdDilated:   displayImage = ImageUtils::convertToRGB(images.dilated.clone()); break;
+  case imageIdHSV:            displayImage = ImageUtils::convertToRGB(images.hsvImage.clone()); break;
+  case imageIdThresholded:    displayImage = ImageUtils::convertToRGB(images.thresholded.clone()); break;
+  case imageIdHistogram: {
+    ImageUtils::calcHistogram(srcImage, images.histImage);
+    displayImage = ImageUtils::convertToRGB(images.histImage.clone()); break;
+  }
+  case imageIdContours: {
+    images.contours = Mat::zeros(srcImage.size(), CV_8UC3 );
+    for( int i = 0; i< contours.size(); i++ ) {
+      drawContours(images.contours, contours, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+    displayImage = ImageUtils::convertToRGB(images.contours.clone());
+    break;
+  }
+  case imageIdPolygons:  {
+    // Draw the contours in a window
+    images.polygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
+    for( int i = 0; i< contours.size(); i++ ) {
+      drawContours(images.polygons, poly, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+
+    displayImage = ImageUtils::convertToRGB(images.polygons.clone());
+    break;
+  }
+  case imageIdPrunedPolygons: {
+    // Draw the pruned Poloygons in a window
+    images.prunedPolygons = Mat::zeros(images.thresholded.size(), CV_8UC3 );
+    for (int i=0; i < prunedPoly.size(); i++) {
+      drawContours(images.prunedPolygons, prunedPoly, i, ColorWhite, 1, 8,
+		   vector<Vec4i>(), 0, Point() );
+    }
+    
+    displayImage = ImageUtils::convertToRGB(images.prunedPolygons.clone());
+    break;
+  }
+  case imageIdTargets: {
+    // Draw the targets
+    //Mat
+    images.targets = Mat::zeros( images.thresholded.size(), CV_8UC3 );
+    for (int i=0; i < targetQuads.size(); i++) {
+      drawContours(images.targets, targetQuads, i, ColorGray, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    // Draw the targets
+    //Mat targets2fi = Mat::zeros( thresholded.size(), CV_8UC3 );
+    for (int i=0; i < targetQuads2fi.size(); i++) {
+      drawContours(images.targets, targetQuads2fi, i, ColorWhite, 1, 8, vector<Vec4i>(), 0, Point() );
+    }
+    
+    displayImage = ImageUtils::convertToRGB(images.targets.clone());
+    break;
+  }
+  case imageIdFinal:          displayImage = ImageUtils::convertToRGB(finalImage.clone()); break;
+  case imageIdFieldView: {
+    Point imageSize(finalImage.cols,finalImage.rows);
+    images.fieldView = Mat::zeros(images.thresholded.size(), CV_8UC3 );
+
+    cv::Size pipSize(imageSize.x/2,imageSize.y/2);
+    cv::Mat pipImage;
+    cv::resize(finalImage, pipImage, pipSize);
+
+    // Define roi area (it has small image dimensions). 
+    cv::Rect roi = cv::Rect(imageSize.x/2,imageSize.y/2, pipImage.cols, pipImage.rows);
+
+    // Take a sub-view of the large image
+    cv::Mat subView = images.fieldView(roi); 
+
+    // Copy contents of the small image to large
+    pipImage.copyTo(subView); 
+
+    if (bestTarget.valid) {
+      double robotAngle = bestTarget.angleX * 3.1415/180.0;
+      double anglePerpendicular = bestTarget.anglePerpendicular * 3.1415/180.0;
+      //      anglePerpendicular = 3.14/2;
+      double distFromPole = bestTarget.distanceX;
+      Point originRobot(imageSize.x/2, imageSize.y/10);
+
+      Point pole[4];
+      pole[0] = Point(originRobot.x -10, 0);
+      pole[1] = Point(originRobot.x -10, originRobot.y);
+      pole[2] = Point(originRobot.x +10, originRobot.y);
+      pole[3] = Point(originRobot.x +10, 0);
+      cv::fillConvexPoly(images.fieldView, pole, 4, (targetColor == BlueTarget) ? ColorBlue : ColorRed);
+
+      Point robot[4];
+      robot[0] = Point(originRobot.x -30, originRobot.y);
+      robot[1] = Point(originRobot.x -30, originRobot.y+60);
+      robot[2] = Point(originRobot.x +30, originRobot.y+60);
+      robot[3] = Point(originRobot.x +30, originRobot.y);
+
+      Point arrow[8];
+      arrow[0] = Point(originRobot.x, originRobot.y);              // Top point
+      arrow[1] = Point(originRobot.x -10, originRobot.y + 10);     // Left point
+      arrow[2] = Point(originRobot.x -3,  originRobot.y + 10);     // Left front Line
+      arrow[3] = Point(originRobot.x -3,  originRobot.y + 20);     // Left back Line
+      arrow[4] = Point(originRobot.x +3,  originRobot.y + 20);     // Right back Line
+      arrow[5] = Point(originRobot.x +3,  originRobot.y + 10);     // Right front Line
+      arrow[6] = Point(originRobot.x +10,  originRobot.y + 10);    // Right point
+      arrow[7] = Point(originRobot.x,  originRobot.y);             // Top point
+
+      double scale = 400.0 / 60.0; // 400 pixels = 60 inches
+      Point offset(0, scale * distFromPole);
+      
+      ImageUtils::rotatePts(robot, 4, originRobot, robotAngle);
+      ImageUtils::rotatePts(arrow, 8, originRobot, robotAngle);
+
+      ImageUtils::translatePts(robot, 4, offset);
+      ImageUtils::translatePts(arrow, 8, offset);
+
+      ImageUtils::rotatePts(robot, 4, originRobot, anglePerpendicular);
+      ImageUtils::rotatePts(arrow, 8, originRobot, anglePerpendicular);
+
+      cv::fillConvexPoly(images.fieldView, robot, 4, ColorGreen);
+      cv::fillConvexPoly(images.fieldView, arrow, 8, ColorYellow);
+
+      Point align( 10, 30 );
+      ostringstream text;
+      text.precision(3);
+      text << "Distance=" << distFromPole << " inches";
+      putText(images.fieldView, text.str(), align, CV_FONT_HERSHEY_PLAIN, 1.2, ColorWhite );
+    }
+    displayImage = ImageUtils::convertToRGB(images.fieldView.clone());
+    break;
+  }
+  default: printf("Illegal image case\n"); exit(-1);
+  }
 }
 
-ProcessPoleTarget::ProcessPoleTarget(TargetColor targetColorIn) {
+ProcessPoleTarget::ProcessPoleTarget(TargetColor targetColorIn) :
+  imageId(imageIdFinal),
+  hsvThreshold((targetColorIn == BlueTarget),
+	       (targetColorIn == BlueTarget)? Vision::BluePole::HSVThreshold::HueLow :
+	       Vision::RedPole::HSVThreshold::HueLow,
+	       (targetColorIn == BlueTarget) ? Vision::BluePole::HSVThreshold::HueHigh :
+	       Vision::RedPole::HSVThreshold::HueHigh,
+	       (targetColorIn == BlueTarget)? Vision::BluePole::HSVThreshold::HueLow2 : 0,
+	       (targetColorIn == BlueTarget)? Vision::BluePole::HSVThreshold::HueHigh2 : 0,
+	       (targetColorIn == BlueTarget) ? Vision::BluePole::HSVThreshold::SatLow :
+	       Vision::RedPole::HSVThreshold::SatLow,
+	       (targetColorIn == BlueTarget) ? Vision::BluePole::HSVThreshold::SatHigh :
+	       Vision::RedPole::HSVThreshold::SatHigh,
+	       (targetColorIn == BlueTarget) ? Vision::BluePole::HSVThreshold::ValueLow :
+	       Vision::RedPole::HSVThreshold::ValueLow,
+	       (targetColorIn == BlueTarget) ? Vision::BluePole::HSVThreshold::ValueHigh :
+	       Vision::RedPole::HSVThreshold::ValueHigh)
+{
   targetColor = targetColorIn;
   params.thresh = 113;                   //!< Defines the threshold level to apply to image
   params.thresh_block_size = 23;        //!< Defines the threshold block size to apply to image
@@ -323,8 +430,8 @@ ProcessPoleTarget::ProcessPoleTarget(TargetColor targetColorIn) {
   params.trackMax = 20;
   params.max_colorsize = 20;
   
-  params.minArea = 500;                 //!< Polygons below this size are rejected
-  params.max_minArea = 10000;           //!< Max polygon size for the trackbar
+  params.minArea = 10000;                 //!< Polygons below this size are rejected
+  params.max_minArea = 30000;           //!< Max polygon size for the trackbar
   
   params.dilation_elem = 0;             //!< The element type dilate/erode with
   params.max_elem = 2;            //!< Max trackbar element type
@@ -336,25 +443,25 @@ ProcessPoleTarget::ProcessPoleTarget(TargetColor targetColorIn) {
   
   params.target_width_inches = 24;      //!< Width of a physical target in inches
   params.target_height_inches = 16;     //!< Height of a physical target in inches
+  
+  imageNames.resize(12);
+  imageNames[imageIdGrayScale] = "Gray Scale Image";
+  imageNames[imageIdHistogram] = "Histogram Image";
+  imageNames[imageIdBlurred] = "Blurred Image";
+  imageNames[imageIdDilated] = "Dilated Image";
+  imageNames[imageIdHSV] = "HSV Image";
+  imageNames[imageIdThresholded] = "Thresholded Image";
+  imageNames[imageIdContours] = "Contours Image";
+  imageNames[imageIdPolygons] = "Polygons Image";
+  imageNames[imageIdPrunedPolygons] = "Pruned Polygons Image";
+  imageNames[imageIdTargets] = "Targets Image";
+  imageNames[imageIdFinal] = "Final Image";
+  imageNames[imageIdFieldView] = "Field Views";
 }
 
 void ProcessPoleTarget::initGui(bool guiAll) {
   /// Create Window
   if (guiAll) {
-    namedWindow("Source", CV_WINDOW_AUTOSIZE );
-    namedWindow("Red", CV_WINDOW_AUTOSIZE );
-    namedWindow("Blue", CV_WINDOW_AUTOSIZE );
-    namedWindow("Green", CV_WINDOW_AUTOSIZE );
-    namedWindow("GrayScaleImage", CV_WINDOW_AUTOSIZE );
-    namedWindow("Blur", CV_WINDOW_AUTOSIZE );
-    namedWindow("Dilate", CV_WINDOW_AUTOSIZE );
-    namedWindow("Threshold", CV_WINDOW_AUTOSIZE );
-    namedWindow("Contours", CV_WINDOW_AUTOSIZE );
-    namedWindow("Polygon", CV_WINDOW_AUTOSIZE );
-    namedWindow("PrunedPolygon", CV_WINDOW_AUTOSIZE );
-    namedWindow("Targets", CV_WINDOW_AUTOSIZE );
-    namedWindow("Final", CV_WINDOW_AUTOSIZE | CV_GUI_EXPANDED);
-
     createTrackbar("Red", "GrayScaleImage", &params.trackRed, params.max_colorsize, dummyCallback);
     createTrackbar("Green", "GrayScaleImage", &params.trackGreen, params.max_colorsize, dummyCallback);
     createTrackbar("Blue", "GrayScaleImage", &params.trackBlue, params.max_colorsize, dummyCallback);

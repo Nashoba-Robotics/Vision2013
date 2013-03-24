@@ -16,6 +16,7 @@ RectTarget::RectTarget() {
   centerY = 0;
   sizeX = 0;
   sizeY = 0;
+  aspectRatio = 0;
   distanceX = 0;
   distanceY = 0;
   angleX = 0;
@@ -269,6 +270,7 @@ void RectTarget::getRectTarget(Mat &image,
 
     target.sizeX = sizeX;
     target.sizeY = sizeY;
+    target.aspectRatio = sizeX/sizeY;
     // Distance to target was obtained from distance to target measurements
     // that were trend line fit in Excel
     target.distanceX = RectTargetMeasured::rectSizeXToDistance(sizeX);

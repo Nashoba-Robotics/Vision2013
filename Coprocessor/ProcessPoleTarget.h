@@ -3,13 +3,16 @@
 #define __PROCESS_POLE_TARGET__
 
 #include "PoleTarget.h"
+#include "ProcessTargetBase.h"
 #include "TimeUtils.h"
+#include "HsvThresholdQt.h"
 
-class ProcessPoleTarget {
+class ProcessPoleTarget : public ProcessTargetBase {
  public:
   class Images {
   public:
     cv::Mat grayScale;
+    cv::Mat histImage;
     cv::Mat blurred;
     cv::Mat dilated;
     cv::Mat hsvImage;
@@ -19,11 +22,52 @@ class ProcessPoleTarget {
     cv::Mat prunedPolygons;
     cv::Mat targets;
     cv::Mat final;
+    cv::Mat fieldView;
+
+    cv::Mat temp;
     
     std::vector<cv::Mat> planes;
   };
   Images images;
+  std::vector<std::string> imageNames;
+  enum ImageId {
+    imageIdGrayScale,
+    imageIdHistogram,
+    imageIdBlurred,
+    imageIdDilated,
+    imageIdHSV,
+    imageIdThresholded,
+    imageIdContours,
+    imageIdPolygons,
+    imageIdPrunedPolygons,
+    imageIdTargets,
+    imageIdFinal,
+    imageIdFieldView
+  };
 
+  ImageId imageId;
+  std::vector<std::string> &getImageNames() { return imageNames; }
+  int getImageDisplay() {
+    return imageId;
+  }
+
+  virtual void showGui(QGridLayout *layout) {
+    hsvThreshold.showGui(layout);
+  }
+  virtual void hideGui(QGridLayout *layout) {
+    hsvThreshold.hideGui(layout);
+  }
+
+  void setImageDisplay(int index) {
+    if ((index < imageIdGrayScale) || (index > imageIdFieldView)) {
+      imageId = imageIdFinal;
+    } else {
+      imageId = (ImageId)index;
+    }
+  }
+
+  HsvThresholdQt hsvThreshold;
+  
   class Params {
   public:
     int thresh;                   //!< Defines the threshold level to apply to image
@@ -57,11 +101,19 @@ class ProcessPoleTarget {
   Params params;
   
   void initGui(bool guiAll);
-  void processImage(cv::Mat &srcImage, cv::Mat &finalImage, bool guiAll, EventRate &eventRate);
+  void processImage(cv::Mat &srcImage, cv::Mat &displayImage,
+		    cv::Mat &finalImage, bool guiAll, EventRate &eventRate);
   void targetsDebugText(cv::Mat &finalDrawing, PoleTarget &target);
   enum TargetColor { RedTarget, BlueTarget};
   TargetColor targetColor;
   ProcessPoleTarget(TargetColor targetColorIn);
+  virtual void writeDefines(FILE *file, std::string indent) {
+    fprintf(file, "%s namespace %s {\n", indent.c_str(), (targetColor == BlueTarget) ? "BluePole" : "RedPole");
+    std::string indentMore = indent;
+    indentMore += "  ";
+    hsvThreshold.writeDefines(file, indentMore);
+    fprintf(file, "%s };\n", indent.c_str());
+  }
 };
 
 

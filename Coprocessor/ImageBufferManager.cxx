@@ -4,17 +4,21 @@
 #include "Semaphore.h"
 #include "ImageBufferManager.h"
 
-ImageBufferManager::Buffers::Buffers() : source(BUFFER_EMPTY), final(BUFFER_EMPTY) {}
+ImageBufferManager::Buffers::Buffers() : source(BUFFER_EMPTY),
+					 display(BUFFER_EMPTY),
+					 final(BUFFER_EMPTY) {
+}
 
 void ImageBufferManager::Buffers::setBuffersEmpty(void) {
   source = BUFFER_EMPTY;
+  display = BUFFER_EMPTY;
   final = BUFFER_EMPTY;
 }
 
 bool ImageBufferManager::Buffers::areEmpty(void) {
-  assert( ((source == BUFFER_EMPTY) && (final == BUFFER_EMPTY)) ||
-	  ((source != BUFFER_EMPTY) && (final != BUFFER_EMPTY)));
-  return ((source == BUFFER_EMPTY) && (final == BUFFER_EMPTY));
+  assert( ((source == BUFFER_EMPTY) && (final == BUFFER_EMPTY) && (display == BUFFER_EMPTY)) ||
+	  ((source != BUFFER_EMPTY) && (final != BUFFER_EMPTY) && (display != BUFFER_EMPTY)));
+  return ((source == BUFFER_EMPTY) && (final == BUFFER_EMPTY) && (display == BUFFER_EMPTY));
 }
 
 
@@ -39,6 +43,8 @@ ImageBufferManager::Buffers ImageBufferManager::captureBegin() {
     }
     buffers.source = freeList.front();
     freeList.pop_front();
+    buffers.display = freeList.front();
+    freeList.pop_front();
     buffers.final = freeList.front();
     freeList.pop_front();
     mutex.unlock();
@@ -53,11 +59,14 @@ void ImageBufferManager::captureComplete(Buffers buffers) {
     if (!captureBuffers.areEmpty()) {
       // Camera is faster than processing
       freeList.push_back(captureBuffers.source);
+      freeList.push_back(captureBuffers.display);
       freeList.push_back(captureBuffers.final);
       existingResults = true;
       //      printf("Capture Buffer Not empty\n");
     }
+    //    printf("Capture release Buffers %d %d %d\n", captureBuffers.source, captureBuffers.display, captureBuffers.final);
     captureBuffers = buffers;
+    //    printf("Capture Buffers %d %d %d\n", buffers.source, buffers.display, buffers.final);
     // Release capture semaphore to let processing thread proceed
     if (!existingResults)
       captureSem.release();
@@ -85,11 +94,13 @@ void ImageBufferManager::processComplete(Buffers buffers) {
     if (!processBuffers.areEmpty()) {
       // Processing faster than displaying
       freeList.push_back(processBuffers.source);
+      freeList.push_back(processBuffers.display);
       freeList.push_back(processBuffers.final);
       existingResults = true;
       //      printf("Process Buffer Not empty\n");
     }
     processBuffers = buffers;
+    //    printf("Processing complete Buffers %d %d %d\n", buffers.source, buffers.display, buffers.final);
 
     // Release processing semaphore to let the displaying thread proceed
     if (!existingResults)
@@ -124,6 +135,7 @@ void ImageBufferManager::displayComplete(Buffers buffers) {
     if (!displayBuffers.areEmpty()) {
       // Processing faster than displaying
       freeList.push_back(displayBuffers.source);
+      freeList.push_back(displayBuffers.display);
       freeList.push_back(displayBuffers.final);
       existingResults = true;
     }

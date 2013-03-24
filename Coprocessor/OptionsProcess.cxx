@@ -25,6 +25,9 @@ int OptionsProcess::processArgs(int argc, char** argv) {
 	{"rectTarget",   no_argument,  &processingType, targetTypeRect},
 	{"bluePole",   no_argument,    &processingType, targetTypeBluePole},
 	{"redPole",    no_argument,    &processingType, targetTypeRedPole},
+	{"writeVideoSource",    no_argument,    &writeVideoSource, 1},
+	{"writeVideoDisplay",    no_argument,    &writeVideoDisplay, 1},
+	{"writeVideoFinal",    no_argument,    &writeVideoFinal, 1},
 	/* These options don't set a flag.
 	   We distinguish them by their indices. */
 	{"help",    no_argument,       0, 'h'},
@@ -78,15 +81,18 @@ int OptionsProcess::processArgs(int argc, char** argv) {
       break;
     }
     case 'h':
-      printf("vision [-h|--help]          : Print this message\n");
-      printf("       [--guiAll]           : Display all debugging windows\n");
-      printf("       [--bluePole |        : Process blue pole\n");
-      printf("        --redPole  |        : Process red pole\n");
-      printf("        --rectTarget |      : Process rectangular target\n");
-      printf("        --noTarget]         : Process with no target processing\n");
-      printf("       [--numCameras] num  : Number of cameras in system\n");
-      printf("       [--camera] num       : Camera to process\n");
-      printf("       [-f|--file] filename : Process a mjpg video or jpeg image\n");
+      printf("vision [-h|--help]           : Print this message\n");
+      printf("       [--guiAll]            : Display all debugging windows\n");
+      printf("       [--bluePole |         : Process blue pole\n");
+      printf("        --redPole  |         : Process red pole\n");
+      printf("        --rectTarget |       : Process rectangular target\n");
+      printf("        --noTarget]          : Process with no target processing\n");
+      printf("       [--numCameras] num    : Number of cameras in system\n");
+      printf("       [--camera] num        : Camera to process\n");
+      printf("       [-f|--file] filename  : Process a mjpg video or jpeg image\n");
+      printf("       [--writeVideoSource]  : Write source video file\n");
+      printf("       [--writeVideoDisplay] : Write display video file\n");
+      printf("       [--writeVideoFinal]   : Write final video file\n");
       exit(0);
       break;
       
@@ -98,6 +104,8 @@ int OptionsProcess::processArgs(int argc, char** argv) {
       exit(0);
     }
   }
+  // We want to store live camera to disk
+  writeVideoSource |= !fileName;
 }
 
 void OptionsProcess::setProcessingType(TargetType type) {

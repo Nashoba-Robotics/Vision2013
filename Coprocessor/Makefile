@@ -35,25 +35,19 @@ CMAKE_COMMAND = /usr/bin/cmake
 # The command to remove a file.
 RM = /usr/bin/cmake -E remove -f
 
-# Escaping for special characters.
-EQUALS = =
-
-# The program to use to edit the cache.
-CMAKE_EDIT_COMMAND = /usr/bin/ccmake
-
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
+CMAKE_SOURCE_DIR = /home/user/VisionImages/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fluffypony/git/Coprocessor-Vision/Coprocessor
+CMAKE_BINARY_DIR = /home/user/VisionImages/src
 
 #=============================================================================
 # Targets provided globally by CMake.
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running interactive CMake command-line interface..."
+	/usr/bin/cmake -i .
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -72,9 +66,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/VisionImages/src/CMakeFiles /home/user/VisionImages/src/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fluffypony/git/Coprocessor-Vision/Coprocessor/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/VisionImages/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -449,6 +443,30 @@ ProcessRectTarget.s: ProcessRectTarget.cxx.s
 ProcessRectTarget.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessRectTarget.cxx.s
 .PHONY : ProcessRectTarget.cxx.s
+
+ProcessTargetBase.o: ProcessTargetBase.cxx.o
+.PHONY : ProcessTargetBase.o
+
+# target to build an object file
+ProcessTargetBase.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessTargetBase.cxx.o
+.PHONY : ProcessTargetBase.cxx.o
+
+ProcessTargetBase.i: ProcessTargetBase.cxx.i
+.PHONY : ProcessTargetBase.i
+
+# target to preprocess a source file
+ProcessTargetBase.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessTargetBase.cxx.i
+.PHONY : ProcessTargetBase.cxx.i
+
+ProcessTargetBase.s: ProcessTargetBase.cxx.s
+.PHONY : ProcessTargetBase.s
+
+# target to generate assembly for a file
+ProcessTargetBase.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/ProcessTargetBase.cxx.s
+.PHONY : ProcessTargetBase.cxx.s
 
 RectTarget.o: RectTarget.cxx.o
 .PHONY : RectTarget.o
@@ -882,6 +900,30 @@ moc_ProcessRectTarget.cxx.s:
 	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessRectTarget.cxx.s
 .PHONY : moc_ProcessRectTarget.cxx.s
 
+moc_ProcessTargetBase.o: moc_ProcessTargetBase.cxx.o
+.PHONY : moc_ProcessTargetBase.o
+
+# target to build an object file
+moc_ProcessTargetBase.cxx.o:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessTargetBase.cxx.o
+.PHONY : moc_ProcessTargetBase.cxx.o
+
+moc_ProcessTargetBase.i: moc_ProcessTargetBase.cxx.i
+.PHONY : moc_ProcessTargetBase.i
+
+# target to preprocess a source file
+moc_ProcessTargetBase.cxx.i:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessTargetBase.cxx.i
+.PHONY : moc_ProcessTargetBase.cxx.i
+
+moc_ProcessTargetBase.s: moc_ProcessTargetBase.cxx.s
+.PHONY : moc_ProcessTargetBase.s
+
+# target to generate assembly for a file
+moc_ProcessTargetBase.cxx.s:
+	$(MAKE) -f CMakeFiles/vision.dir/build.make CMakeFiles/vision.dir/moc_ProcessTargetBase.cxx.s
+.PHONY : moc_ProcessTargetBase.cxx.s
+
 moc_RectTarget.o: moc_RectTarget.cxx.o
 .PHONY : moc_RectTarget.o
 
@@ -1053,6 +1095,9 @@ help:
 	@echo "... ProcessRectTarget.o"
 	@echo "... ProcessRectTarget.i"
 	@echo "... ProcessRectTarget.s"
+	@echo "... ProcessTargetBase.o"
+	@echo "... ProcessTargetBase.i"
+	@echo "... ProcessTargetBase.s"
 	@echo "... RectTarget.o"
 	@echo "... RectTarget.i"
 	@echo "... RectTarget.s"
@@ -1107,6 +1152,9 @@ help:
 	@echo "... moc_ProcessRectTarget.o"
 	@echo "... moc_ProcessRectTarget.i"
 	@echo "... moc_ProcessRectTarget.s"
+	@echo "... moc_ProcessTargetBase.o"
+	@echo "... moc_ProcessTargetBase.i"
+	@echo "... moc_ProcessTargetBase.s"
 	@echo "... moc_RectTarget.o"
 	@echo "... moc_RectTarget.i"
 	@echo "... moc_RectTarget.s"

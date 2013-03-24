@@ -4,12 +4,15 @@
 
 #include "RectTarget.h"
 #include "TimeUtils.h"
+#include "ProcessTargetBase.h"
+#include "HsvThresholdQt.h"
 
-class ProcessRectTarget {
+class ProcessRectTarget  : public ProcessTargetBase {
  public:
   class Images {
   public:
     cv::Mat grayScale;
+    cv::Mat histImage;
     cv::Mat blurred;
     cv::Mat dilated;
     cv::Mat hsvImage;
@@ -18,22 +21,61 @@ class ProcessRectTarget {
     cv::Mat polygons;
     cv::Mat prunedPolygons;
     cv::Mat targets;
+    cv::Mat prunedTargets;
     cv::Mat final;
     
     std::vector<cv::Mat> planes;
   };
   Images images;
+  std::vector<std::string> imageNames;
+  enum ImageId {
+    imageIdGrayScale,
+    imageIdHistogram,
+    imageIdBlurred,
+    imageIdDilated,
+    imageIdHSV,
+    imageIdThresholded,
+    imageIdContours,
+    imageIdPolygons,
+    imageIdPrunedPolygons,
+    imageIdTargets,
+    imageIdPrunedTargets,
+    imageIdFinal
+  };
+  ImageId imageId;
 
+  virtual void showGui(QGridLayout *layout) {
+    hsvThreshold.showGui(layout);
+  }
+  virtual void hideGui(QGridLayout *layout) {
+    hsvThreshold.hideGui(layout);
+  }
+  virtual void writeDefines(FILE *file, std::string indent) {
+    fprintf(file, "%s namespace %s {\n", indent.c_str(), "RectTarget");
+    std::string indentMore = indent;
+    indentMore += "  ";
+    hsvThreshold.writeDefines(file, indentMore);
+    fprintf(file, "%s };\n", indent.c_str());
+  }
+
+  std::vector<std::string> &getImageNames() { return imageNames; }
+  int getImageDisplay() {
+    return imageId;
+  }
+  void setImageDisplay(int index) {
+    if ((index < imageIdGrayScale) || (index > imageIdFinal)) {
+      imageId = imageIdFinal;
+    } else {
+      imageId = (ImageId)index;
+    }
+  }
+
+  HsvThresholdQt hsvThreshold;
+  
   class Params {
   public:
     int thresh;                   //!< Defines the threshold level to apply to image
     int thresh_block_size;        //!< Defines the threshold block size to apply to image
-    int huelow;
-    int huehigh;
-    int satlow;
-    int sathigh;
-    int valuelow;
-    int valuehigh;
 
     int max_thresh_block_size;   //!< Defines the threshold block size to apply to image
     int max_thresh;              //!< Max threshold for the trackbar
@@ -64,7 +106,8 @@ class ProcessRectTarget {
   Params params;
   
   void initGui(bool guiAll);
-  void processImage(cv::Mat &srcImage, cv::Mat &finalImage, bool guiAll, EventRate &eventRate);
+  void processImage(cv::Mat &srcImage, cv::Mat &displayImage, cv::Mat &finalImage,
+		    bool guiAll, EventRate &eventRate);
   void targetsDebugText(cv::Mat &finalDrawing, RectTarget &target);
   ProcessRectTarget();
 };

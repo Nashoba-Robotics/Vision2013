@@ -16,8 +16,8 @@ set(CMAKE_CXX_FLAGS_PROFILE "${CMAKE_CXX_FLAGS_PROFILE} -pthread -g -pg")
 set(CMAKE_C_FLAGS_PROFILE "${CMAKE_C_FLAGS_PROFILE} -pthread -g -pg")  
 
 
-SET(vision_SOURCES OptionsProcess.cxx ImageUtils.cxx  RectTargetMeasured.cxx RectTarget.cxx Messaging.cxx TimeUtils.cxx Main.cxx ProcessRectTarget.cxx ProcessNoTarget.cxx PoleTarget.cxx PoleTargetMeasured.cxx ProcessPoleTarget.cxx Semaphore.cxx ImageBufferManager.cxx ImageCapture.cxx Mutex.cxx Process.cxx MainWindow.cxx)
-SET(vision_HEADERS  Defines.h Mutex.h ProcessNoTarget.h Semaphore.h ImageBufferManager.h OptionsProcess.h ProcessPoleTarget.h Thread.h ImageCapture.h PoleTarget.h ProcessRectTarget.h TimeUtils.h ImageUtils.h PoleTargetMeasured.h RectTarget.h Messaging.h Process.h RectTargetMeasured.h MainWindow.h)
+SET(vision_SOURCES OptionsProcess.cxx ImageUtils.cxx  RectTargetMeasured.cxx RectTarget.cxx Messaging.cxx TimeUtils.cxx Main.cxx ProcessRectTarget.cxx ProcessNoTarget.cxx PoleTarget.cxx PoleTargetMeasured.cxx ProcessPoleTarget.cxx Semaphore.cxx ImageBufferManager.cxx ImageCapture.cxx Mutex.cxx Process.cxx ProcessTargetBase.cxx MainWindow.cxx)
+SET(vision_HEADERS MainWindow.h HsvThresholdQt.h)
 SET(vision_FORMS MainWindow.ui)
 SET(vision_RESOURCES )
 
